@@ -21,3 +21,21 @@ async def start_keyboard():
         input_field_placeholder="Нажмите для регистрации"
     )
     return keyboard
+
+
+async def check_phone_number_keyboard():
+    keyboard_list = [
+        [InlineKeyboardButton(
+            text=RegisterButtons.yes_phone_number_button,
+            callback_data="valid_phone_number"
+        )],
+        [InlineKeyboardButton(
+            text=RegisterButtons.no_phone_number_button,
+            callback_data="invalid_phone_number"
+        )]
+    ]
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=keyboard_list
+    )
+
+    return keyboard

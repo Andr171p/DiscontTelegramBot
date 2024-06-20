@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="" />
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/order_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/order_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/db_auth_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/db_auth_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/db_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/db_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requests1C/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requests1C/order.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/keyboards/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/keyboards/buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/keyboards/order_status_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/keyboards/order_status_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/keyboards/register_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/keyboards/register_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2hlS0Er9TOceiZqxaIHFDFVTBog" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,10 +48,140 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.db_manage.executor": "Run",
+    "Python.handlers.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.order.executor": "Run",
+    "Python.order_status.executor": "Run",
+    "Python.reception.executor": "Run",
+    "Python.start.executor": "Run",
+    "Python.storage.executor": "Run",
+    "Python.utils.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="db_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuchefTeleBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/database" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/database/db_manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuchefTeleBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telegram_bot/bot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telegram_bot/bot/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="order" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuchefTeleBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/requests1C" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/requests1C/order.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="order_status" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuchefTeleBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/client" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/client/order_status.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="storage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuchefTeleBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telegram_bot/bot" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telegram_bot/bot/storage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.db_manage" />
+        <item itemvalue="Python.storage" />
+        <item itemvalue="Python.order" />
+        <item itemvalue="Python.order_status" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
