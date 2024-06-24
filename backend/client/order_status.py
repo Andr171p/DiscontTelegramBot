@@ -3,6 +3,7 @@ import json
 from backend.requests1C.order import get_order_response
 
 from misc.utils import format_order_number, format_order_time
+from misc.utils import format_order_date, format_trade_card
 
 
 class ClientOrder:
@@ -39,6 +40,9 @@ class ClientOrder:
                 self.status_data['delivery_time_to'].append(order['delivery_time_to'])
                 self.status_data['trade_point'].append(order['trade_point'])
                 self.status_data['delivery_method'].append(order['delivery_method'])
+                self.status_data['date'].append(order['date'])
+                self.status_data['trade_point_card'].append(order['trade_point_card'])
+                self.status_data['delivery_adress'].append(order['delivery_adress'])
 
         except Exception as _ex:
             print(_ex)
@@ -63,7 +67,10 @@ class ClientOrder:
                     pay_status=self.status_data['pay_status'][i],
                     cooking_time_to=self.status_data['cooking_time_to'][i],
                     trade_point=self.status_data['trade_point'][i],
-                    delivery_method=self.status_data['delivery_method'][i]
+                    delivery_method=self.status_data['delivery_method'][i],
+                    date=self.status_data['date'][i],
+                    trade_point_card=self.status_data['trade_point_card'][i],
+                    delivery_adress=self.status_data['delivery_adress'][i]
                 )
                 status = pretty_status.message()
 
@@ -87,7 +94,11 @@ class PrettyStatus:
                  pay_status,
                  cooking_time_to,
                  trade_point,
-                 delivery_method):
+                 delivery_method,
+                 date,
+                 trade_point_card,
+                 delivery_adress
+                 ):
         self.status = status
         self.number_of_order = format_order_number(number_of_order)
         self.first_delivery_time = format_order_time(first_delivery_time)
@@ -97,6 +108,9 @@ class PrettyStatus:
         self.cooking_time_to = format_order_time(cooking_time_to)
         self.trade_point = trade_point
         self.delivery_method = delivery_method
+        self.date = format_order_date(date)
+        self.trade_point_card = format_trade_card(trade_point_card)
+        self.delivery_adress = delivery_adress
 
     def pretty_pay_status(self):
         if self.pay_status == 'CONFIRMED':
@@ -109,12 +123,13 @@ class PrettyStatus:
             case StatusMessage.accepted_operator:
                 if self.delivery_method == 'Курьер':
                     message = (f"Ваш заказ №{self.number_of_order} принят и будет\n"
-                                f"доставлен с {self.first_delivery_time} до {self.second_delivery_time}.\n"
+                                f"доставлен {self.date} с {self.first_delivery_time} до {self.second_delivery_time} по адресу\n"
+                               f"{self.delivery_adress}."
                                 f"Сумма: {self.order_summ} руб.")
                     return message
                 else:
                     message = (f"Ваш заказ №{self.number_of_order} принят и будет\n"
-                               f"готов к выдаче с {self.first_delivery_time} до {self.second_delivery_time} по аддресу {self.trade_point}.")
+                               f"готов к выдаче {self.date} с {self.first_delivery_time} до {self.second_delivery_time} по адресу {self.trade_point}.")
                     return message
             case StatusMessage.transferred_to_the_kitchen:
                 message = (f"Ваш заказ №{self.number_of_order} {self.pretty_pay_status()} и\n"
@@ -134,11 +149,18 @@ class PrettyStatus:
                 return message
             case StatusMessage.sent_to_courier:
                 message = (f"Ваш заказ №{self.number_of_order} {self.pretty_pay_status()}\n"
-                           f"и передан курьеру. Ожидайте доставку с {self.first_delivery_time} до {self.second_delivery_time}")
+                           f"и передан курьеру. Ожидайте доставку с {self.first_delivery_time} до {self.second_delivery_time}\n"
+                           f"по адресу:\n"
+                           f"{self.delivery_adress}")
                 return message
             case StatusMessage.delivered:
                 message = (f"Ваш заказ №{self.number_of_order} доставлен курьером.\n"
                            f"Спасибо, сто воспользовались услугами нашего сервиса.")
+                return message
+            case StatusMessage.ready_for_pickup:
+                message = (f"Ваш заказ {self.number_of_order} {self.pretty_pay_status()}\n"
+                           f"ожидает вас по адресу: {self.trade_point}\n"
+                           f"{self.trade_point_card}")
                 return message
 
 
@@ -148,7 +170,7 @@ class StatusMessage:
     prepare = "Готовиться"
     cooked = "Приготовлен"
     staffed = "Укомлектован"
-    ready_for_pickup = "Готов к выдаче"
+    ready_for_pickup = "Готов для выдачи"
     sent_to_courier = "Передан курьеру"
     delivered = "Доставлен"
     finished = "Завершен"
@@ -166,7 +188,10 @@ class StatusData:
             'delivery_time_from': [],
             'delivery_time_to': [],
             'trade_point': [],
-            'delivery_method': []
+            'delivery_method': [],
+            'date': [],
+            'trade_point_card': [],
+            'delivery_adress': []
         }
 
     def clear_values(self):

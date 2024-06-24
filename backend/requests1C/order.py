@@ -20,3 +20,6 @@ def get_order_response(client_phone_number):
     response = requests.post(url, headers=headers, json=data)
 
     return response.json()
+
+
+# print(get_order_response("89829764729"))

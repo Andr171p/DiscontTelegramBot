@@ -104,3 +104,17 @@ class SuchefAuthDB:
             return phone_number
         except Exception as _ex:
             print(_ex)
+
+    def db_replace_phone_number_from_id(self, telegram_id, user_phone_number):
+        self.db_connect()
+        try:
+            with self.connection.cursor() as cursor:
+                query = "UPDATE `user_auth` SET phone_number = %s WHERE user_id = %s"
+                value = (user_phone_number, telegram_id)
+                cursor.execute(query, value)
+        except Exception as _ex:
+            print(_ex)
+        finally:
+            self.connection.commit()
+            cursor.close()
+            self.connection.close()

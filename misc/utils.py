@@ -1,3 +1,6 @@
+import re
+
+
 def format_phone_number(phone_number):
     digits = ''.join(filter(str.isdigit, phone_number))
 
@@ -21,3 +24,22 @@ def format_order_time(order_time):
     time_part = order_time.split('T')
     time = time_part[-1][:-3]
     return time
+
+
+def format_order_date(order_date):
+    date_part = order_date.split('T')
+    date_list = date_part[0].split('-')
+    year = date_list[0]
+    month = date_list[1]
+    day = date_list[2]
+    date = f"{day}.{month}.{year}"
+    return date
+
+
+def format_trade_card(order_trade_card):
+    pattern = r'(https?://\S+)'
+    link = re.search(pattern, order_trade_card)
+    if link:
+        return link.group(0)
+    else:
+        return ""

@@ -39,3 +39,21 @@ async def check_phone_number_keyboard():
     )
 
     return keyboard
+
+
+async def re_register_keyboard():
+    keyboard_list = [
+        [InlineKeyboardButton(
+            text=RegisterButtons.yes_phone_number_button,
+            callback_data="correct_phone_number"
+        )],
+        [InlineKeyboardButton(
+            text=RegisterButtons.no_phone_number_button,
+            callback_data="incorrect_phone_number"
+        )]
+    ]
+    keyboard = InlineKeyboardMarkup(
+        inline_keyboard=keyboard_list
+    )
+
+    return keyboard
