@@ -1,13 +1,14 @@
 import pymysql
 
-from backend.database.db_auth_data import AccessDB
+from backend.database.db_auth_data import AccessDB, RailwayAccessDB
 
 from misc.utils import format_phone_number
 
 
 class SuchefAuthDB:
     def __init__(self):
-        self.access_db = AccessDB()
+        # self.access_db = AccessDB()
+        self.access_db = RailwayAccessDB()
         self.connection = None
         self.users_auth_data = []
 
