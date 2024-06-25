@@ -43,6 +43,7 @@ class ClientOrder:
                 self.status_data['date'].append(order['date'])
                 self.status_data['trade_point_card'].append(order['trade_point_card'])
                 self.status_data['delivery_adress'].append(order['delivery_adress'])
+                self.status_data['project'].append(order['project'])
 
         except Exception as _ex:
             print(_ex)
@@ -52,7 +53,7 @@ class ClientOrder:
         self.response_json_to_dict()
         self.order_info_data()
 
-        if self.status_data == -1:
+        if self.status_data == -1 or self.status_data['project'] != 'Дисконт Суши':
             return -1
         else:
             status_response = []
@@ -162,6 +163,19 @@ class PrettyStatus:
                            f"ожидает вас по адресу: {self.trade_point}\n"
                            f"{self.trade_point_card}")
                 return message
+            case StatusMessage.finished:
+                message = (f"Ваш заказ №{self.number_of_order} успешно завершен. Спасибо,  что\n"
+                           f"воспользовались услугами нашего сервиса.\n"
+                           f"\n"
+                           f"Мы очень старались оставить о нас приятное впечатление\n"
+                           f"и будем признательны, если Вы оставите честный отзыв о\n"
+                           f"нашей работе в 2ГИС {self.trade_point_card}. Никаких бонусов и\n"
+                           f"подарков мы не предлагаем, нам важна справедливая оценка. ")
+                return message
+            case StatusMessage.canceled:
+                message = (f"Ваш заказ №{self.number_of_order} отменен. Нам очень жаль. Надеемся,\n"
+                           f"на скорую встречу.")
+                return message
 
 
 class StatusMessage:
@@ -174,6 +188,7 @@ class StatusMessage:
     sent_to_courier = "Передан курьеру"
     delivered = "Доставлен"
     finished = "Завершен"
+    canceled = "Отменен"
 
 
 class StatusData:
@@ -191,7 +206,8 @@ class StatusData:
             'delivery_method': [],
             'date': [],
             'trade_point_card': [],
-            'delivery_adress': []
+            'delivery_adress': [],
+            'project': []
         }
 
     def clear_values(self):

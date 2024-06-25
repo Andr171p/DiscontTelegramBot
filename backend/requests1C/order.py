@@ -22,4 +22,4 @@ def get_order_response(client_phone_number):
     return response.json()
 
 
-# print(get_order_response("89829764729"))
+print(get_order_response("89829764729"))
