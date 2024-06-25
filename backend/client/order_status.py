@@ -30,20 +30,21 @@ class ClientOrder:
 
             orders = self.order_dict['data']['orders']
             for order in orders:
-                self.status_data['number'].append(order['number'])
-                self.status_data['status'].append(order['status'])
-                self.status_data['amount'].append(order['amount'])
-                self.status_data['pay_status'].append(order['pay_status'])
-                self.status_data['pay_link'].append(order['pay_link'])
-                self.status_data['cooking_time_to'].append(order['cooking_time_to'])
-                self.status_data['delivery_time_from'].append(order['delivery_time_from'])
-                self.status_data['delivery_time_to'].append(order['delivery_time_to'])
-                self.status_data['trade_point'].append(order['trade_point'])
-                self.status_data['delivery_method'].append(order['delivery_method'])
-                self.status_data['date'].append(order['date'])
-                self.status_data['trade_point_card'].append(order['trade_point_card'])
-                self.status_data['delivery_adress'].append(order['delivery_adress'])
-                self.status_data['project'].append(order['project'])
+                if order['project'] == 'Дисконт Суши':
+                    self.status_data['number'].append(order['number'])
+                    self.status_data['status'].append(order['status'])
+                    self.status_data['amount'].append(order['amount'])
+                    self.status_data['pay_status'].append(order['pay_status'])
+                    self.status_data['pay_link'].append(order['pay_link'])
+                    self.status_data['cooking_time_to'].append(order['cooking_time_to'])
+                    self.status_data['delivery_time_from'].append(order['delivery_time_from'])
+                    self.status_data['delivery_time_to'].append(order['delivery_time_to'])
+                    self.status_data['trade_point'].append(order['trade_point'])
+                    self.status_data['delivery_method'].append(order['delivery_method'])
+                    self.status_data['date'].append(order['date'])
+                    self.status_data['trade_point_card'].append(order['trade_point_card'])
+                    self.status_data['delivery_adress'].append(order['delivery_adress'])
+                    self.status_data['project'].append(order['project'])
 
         except Exception as _ex:
             print(_ex)
