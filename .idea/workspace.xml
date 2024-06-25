@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 1.1.3+railway+Procfile">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/order_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/order_status.py" afterDir="false" />
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 1.1.5+railway+Procfile">
       <change beforePath="$PROJECT_DIR$/backend/requests1C/order.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requests1C/order.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -254,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719294340536</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="version 1.1.4+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1719295397363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719295397363</updated>
+    </task>
+    <task id="LOCAL-00010" summary="version 1.1.5+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1719295418894</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719295418894</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -265,6 +279,8 @@
     <MESSAGE value="version 1.1.1+railway+Procfile" />
     <MESSAGE value="version 1.1.2+railway+Procfile" />
     <MESSAGE value="version 1.1.3+railway+Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 1.1.3+railway+Procfile" />
+    <MESSAGE value="version 1.1.4+railway+Procfile" />
+    <MESSAGE value="version 1.1.5+railway+Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.1.5+railway+Procfile" />
   </component>
 </project>

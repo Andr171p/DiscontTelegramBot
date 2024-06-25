@@ -53,7 +53,7 @@ class ClientOrder:
         self.response_json_to_dict()
         self.order_info_data()
 
-        if self.status_data == -1 or self.status_data['project'] != 'Дисконт Суши':
+        if self.status_data == -1:
             return -1
         else:
             status_response = []
