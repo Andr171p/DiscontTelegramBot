@@ -77,6 +77,8 @@ class ClientOrder:
 
                 if self.status_data['pay_status'][i] == 'CONFIRMED':
                     status_response.append([status])
+                elif self.status_data['status'][i] == 'Завершен':
+                    status_response.append([status])
                 else:
                     status_response.append(
                         [status, self.status_data['pay_link'][i]]
