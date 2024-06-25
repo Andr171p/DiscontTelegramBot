@@ -167,9 +167,9 @@ class PrettyStatus:
 class StatusMessage:
     accepted_operator = "Принят оператором"
     transferred_to_the_kitchen = "Передан на кухню"
-    prepare = "Готовиться"
+    prepare = "Готовится"
     cooked = "Приготовлен"
-    staffed = "Укомлектован"
+    staffed = "Укомплектован"
     ready_for_pickup = "Готов для выдачи"
     sent_to_courier = "Передан курьеру"
     delivered = "Доставлен"
