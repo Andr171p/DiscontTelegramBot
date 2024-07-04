@@ -3,7 +3,7 @@ class MessageInterface:
             self,
             username=None,
             order_status_response=None,
-            user_phone_number = None
+            user_phone_number=None
     ):
         # telegram username:
         self.username = username
@@ -27,6 +27,7 @@ class MessageInterface:
                                        "- Заказ ещё не принят оператором\n"
                                        "(нужно подождать пару минут)\n"
                                        "- При регистрации был указан не правильный номер телефона")
+        self.wait_status_message = "Попробуйте отправить запрос через 5-7 минут"
 
     def start_message(self):
         return f"Здравствуйте, {self.username}! Вам нужно пройти регистрацию. Это займёт всего пару секунд"

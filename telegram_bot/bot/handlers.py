@@ -160,6 +160,12 @@ async def order_status_handler(message: Message):
                 )
 
 
+@router.callback_query(F.data == 'correct_phone_number')
+async def correct_phone_number_handler(callback: CallbackQuery):
+    await callback.answer()
+    await callback.message.answer(MessageInterface().wait_status_message)
+
+
 @router.callback_query(F.data == 'incorrect_phone_number')
 async def incorrect_phone_number_handler(callback: CallbackQuery, state: FSMContext):
     await callback.answer()
