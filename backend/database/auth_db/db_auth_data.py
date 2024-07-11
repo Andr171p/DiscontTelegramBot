@@ -14,3 +14,12 @@ class RailwayAccessDB:
         self.user = "root"
         self.password = "EdETdVnkqojjnWEFzZmKiluAmtEKJpKp"
         self.database = "railway"
+
+
+class RailwayAccessOrdersDB:
+    def __init__(self):
+        self.host = "roundhouse.proxy.rlwy.net"
+        self.port = 58966
+        self.user = "root"
+        self.password = "EdETdVnkqojjnWEFzZmKiluAmtEKJpKp"
+        self.database = "railway"

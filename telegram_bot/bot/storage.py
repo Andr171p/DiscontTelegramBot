@@ -16,3 +16,35 @@ class UserInfoStorage:
         self.user_id = None
         self.username = None
         self.phone_number = None
+
+
+class TriggerStatusStorage:
+    def __init__(self):
+        self.stack = set()
+
+    def add(self, trigger_status):
+        self.stack.add(trigger_status)
+
+    def clear(self):
+        self.stack = set()
+
+    def is_full(self):
+        if len(self.stack) >= 3:
+            return True
+        else:
+            return False
+
+    def is_empty(self):
+        if len(self.stack) == 0:
+            return True
+        else:
+            return False
+
+    def check_stack(self, trigger_status):
+        if self.is_full():
+            self.clear()
+            return -1
+        elif self.is_empty():
+            self.add(
+                trigger_status=trigger_status
+            )

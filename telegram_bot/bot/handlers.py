@@ -1,4 +1,4 @@
-from aiogram import types, F, Router
+from aiogram import F, Router
 from aiogram.types import Message, CallbackQuery
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
@@ -11,10 +11,13 @@ from telegram_bot.bot.keyboards.buttons import OrderStatusButtons
 
 from telegram_bot.bot.state import UserPhoneNumberForm, ReplaceUserPhoneNumberForm
 
-from telegram_bot.bot.storage import UserInfoStorage
+from telegram_bot.bot.storage import UserInfoStorage, TriggerStatusStorage
 
-from backend.database.db_manage import SuchefAuthDB
-from backend.client.order_status import ClientOrder
+from backend.database.auth_db.db_auth_manage import SuchefAuthDB
+from backend.database.today_orders_db.db_orders_manage import SuchefOrdersDB
+
+from backend.client.order_status import MyOrderStatus, TriggerOrdersStatus, TodayOrders
+from backend.client.order_status import pretty_message_from_response
 
 from misc.utils import format_phone_number
 
@@ -27,6 +30,8 @@ router = Router()
 suchef_auth_db = SuchefAuthDB()
 
 user_info_storage = UserInfoStorage()
+
+trigger_status_storage = TriggerStatusStorage()
 
 
 @router.message(Command("start"))
@@ -45,6 +50,11 @@ async def start_handler(message: Message):
             MessageInterface(user_name).start_message(),
             reply_markup=await start_keyboard()
         )
+
+    await check_trigger_status(
+        message=message,
+        telegram_id=message.from_user.id
+    )
 
 
 @router.message(F.contact)
@@ -134,10 +144,11 @@ async def order_status_handler(message: Message):
 
     await message.answer(MessageInterface().search_order_message)
 
-    client_order = ClientOrder(
+    my_order_status = MyOrderStatus(
         client_phone_number=phone_number
     )
-    response = client_order.get_order_status()
+
+    response = my_order_status.get_order_status()
 
     if response == -1 or len(response) == 0:
         await message.answer(MessageInterface().empty_order_message)
@@ -195,3 +206,46 @@ async def replace_phone_number_handler(message: Message, state: FSMContext):
         reply_markup=await order_status_keyboard()
     )
     await state.clear()
+
+
+async def check_trigger_status(message, telegram_id):
+    while True:
+        phone_number = suchef_auth_db.db_phone_number_from_id(
+            telegram_id=telegram_id
+        )
+
+        suchef_orders_db = SuchefOrdersDB()
+
+        response = suchef_orders_db.db_check_update_status(
+            trigger_status=TriggerOrdersStatus.trigger_order_status
+        )
+
+        client_orders = []
+        for orders in response:
+            if format_phone_number(orders['phone_number']) == phone_number:
+                client_orders.append(orders)
+
+        today_orders = TodayOrders()
+        orders_at_the_time = today_orders.orders_at_the_time()
+
+        suchef_orders_db.db_update_and_clear_data(
+            orders_at_the_time=orders_at_the_time
+        )
+
+        if response != -1:
+            for order in client_orders:
+                storage_callback = trigger_status_storage.check_stack(
+                    trigger_status=order['status']
+                )
+                if storage_callback != -1:
+                    status = pretty_message_from_response(
+                        order_data=order
+                    )
+                    await message.answer(
+                        status,
+                        reply_markup=await pay_link_keyboard(
+                            order['pay_link']
+                        )
+                    )
+
+        await asyncio.sleep(60)
