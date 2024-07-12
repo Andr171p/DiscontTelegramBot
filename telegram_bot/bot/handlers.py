@@ -211,11 +211,18 @@ async def replace_phone_number_handler(message: Message, state: FSMContext):
 async def check_trigger_status(message, telegram_id):
     while True:
         try:
+            today_orders = TodayOrders()
+            orders_at_the_time = today_orders.orders_at_the_time()
+
+            suchef_orders_db = SuchefOrdersDB()
+
+            suchef_orders_db.db_update_and_clear_data(
+                orders_at_the_time=orders_at_the_time
+            )
+
             phone_number = suchef_auth_db.db_phone_number_from_id(
                 telegram_id=telegram_id
             )
-
-            suchef_orders_db = SuchefOrdersDB()
 
             response = suchef_orders_db.db_check_update_status(
                 trigger_status=TriggerOrdersStatus.trigger_order_status
@@ -225,13 +232,6 @@ async def check_trigger_status(message, telegram_id):
             for orders in response:
                 if format_phone_number(orders['phone_number']) == phone_number:
                     client_orders.append(orders)
-
-            today_orders = TodayOrders()
-            orders_at_the_time = today_orders.orders_at_the_time()
-
-            suchef_orders_db.db_update_and_clear_data(
-                orders_at_the_time=orders_at_the_time
-            )
 
             if response != -1:
                 for order in client_orders:
