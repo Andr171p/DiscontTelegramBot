@@ -210,46 +210,42 @@ async def replace_phone_number_handler(message: Message, state: FSMContext):
 
 async def check_trigger_status(message, telegram_id):
     while True:
-        try:
-            today_orders = TodayOrders()
-            orders_at_the_time = today_orders.orders_at_the_time()
+        today_orders = TodayOrders()
+        orders_at_the_time = today_orders.orders_at_the_time()
 
-            suchef_orders_db = SuchefOrdersDB()
+        suchef_orders_db = SuchefOrdersDB()
 
-            suchef_orders_db.db_update_and_clear_data(
-                orders_at_the_time=orders_at_the_time
-            )
+        suchef_orders_db.db_update_and_clear_data(
+            orders_at_the_time=orders_at_the_time
+        )
 
-            phone_number = suchef_auth_db.db_phone_number_from_id(
-                telegram_id=telegram_id
-            )
+        phone_number = suchef_auth_db.db_phone_number_from_id(
+            telegram_id=telegram_id
+        )
 
-            response = suchef_orders_db.db_check_update_status(
-                trigger_status=TriggerOrdersStatus.trigger_order_status
-            )
+        response = suchef_orders_db.db_check_update_status(
+            trigger_status=TriggerOrdersStatus.trigger_order_status
+        )
 
-            client_orders = []
-            for orders in response:
-                if format_phone_number(orders['phone_number']) == phone_number:
-                    client_orders.append(orders)
+        client_orders = []
+        for orders in response:
+            if format_phone_number(orders['phone_number']) == phone_number:
+                client_orders.append(orders)
 
-            if response != -1:
-                for order in client_orders:
-                    storage_callback = trigger_status_storage.check_stack(
-                        trigger_status=order['status']
+        if response != -1:
+            for order in client_orders:
+                storage_callback = trigger_status_storage.check_stack(
+                    trigger_status=order['status']
+                )
+                if storage_callback != -1:
+                    status = pretty_message_from_response(
+                        order_data=order
                     )
-                    if storage_callback != -1:
-                        status = pretty_message_from_response(
-                            order_data=order
+                    await message.answer(
+                        status,
+                        reply_markup=await pay_link_keyboard(
+                            order['pay_link']
                         )
-                        await message.answer(
-                            status,
-                            reply_markup=await pay_link_keyboard(
-                                order['pay_link']
-                            )
-                        )
+                    )
 
-            await asyncio.sleep(60)
-        except Exception as _ex:
-            print(f"async def check_trigger_status : \n"
-                  f"{_ex}")
+        await asyncio.sleep(60)

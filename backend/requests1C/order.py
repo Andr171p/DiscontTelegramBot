@@ -43,3 +43,6 @@ def get_all_orders_response():
         print(f"ERROR from server: {response.content}\n"
               f"{_ex}")
         return -1
+
+
+print(get_all_orders_response())
