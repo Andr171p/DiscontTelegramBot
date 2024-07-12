@@ -26,7 +26,7 @@ class TodayOrders:
 
         try:
             for client_order in self.orders_array:
-                if client_order['project'] != 'Дисконт Суши':
+                if client_order['project'] == 'Дисконт Суши':
                     clients_orders_data.add_phones_order_data(
                         order=client_order
                     )
