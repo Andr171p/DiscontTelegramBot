@@ -1,6 +1,6 @@
 import pymysql
 
-from backend.database.auth_db.db_auth_data import RailwayAccessOrdersDB
+from backend.database.auth_db.db_auth_data import RailwayAccessOrdersDB, AccessDB
 
 from misc.utils import format_phone_number
 from misc.utils import format_order_number, format_order_time
@@ -12,6 +12,7 @@ import time
 class SuchefOrdersDB:
     def __init__(self):
         self.access_db = RailwayAccessOrdersDB()
+        # self.access_db = AccessDB()
         self.connection = None
         self.users_orders_data = []
 
@@ -168,3 +169,25 @@ class SuchefOrdersDB:
         self.db_insert_orders_data(
             orders_data=orders_at_the_time
         )
+
+
+'''a = {'phone_number': ['9829764729', '9123936800'],
+     'client': ['Алексей', 'Сергей'],
+     'number': ['00НФ-006788', '00НФ-006789'],
+     'date': ['2024-07-13T00:00:00', '2024-07-13T00:00:00'],
+     'status': ['Принят оператором', 'Передан на кухню'],
+     'amount': [1325, 1290],
+     'pay_link': ['https://securepayments.tinkoff.ru/i38d7jh5', 'https://securepayments.tinkoff.ru/sDgMXLWW'],
+     'pay_status': ['CONFIRMED', 'CONFIRMED'],
+     'cooking_time_from': ['0001-01-01T00:00:00', '0001-01-01T00:00:00'],
+     'cooking_time_to': ['0001-01-01T22:00:00', '0001-01-01T21:40:00'],
+     'delivery_time_from': ['0001-01-01T22:30:00', '0001-01-01T22:00:00'],
+     'delivery_time_to': ['0001-01-01T23:00:00', '0001-01-01T23:00:00'],
+     'project': ['Дисконт Суши', 'Дисконт Суши'],
+     'trade_point': ['Героев Космоса, 23', 'Московский тракт, 87к1'],
+     'trade_point_card': ['rePoeB KoсMoсa, 23 https://go.2gis.com/3entdc', "MockoBcku'u TpakT 87 k.1 https://go.2gis.com/pdacd"],
+     'delivery_method': ['Курьер', 'Курьер'],
+     'delivery_adress': ['Тюменская обл, г Тюмень, ул. Сергея Свиридова, д. 7, кв. 134,п.6, э.4', '625049, Тюменская обл, г Тюмень, ул Паровозная, д. 9, п.1, э.3, кв. 8']}
+
+db = SuchefOrdersDB()
+db.db_insert_orders_data(orders_data=a)'''

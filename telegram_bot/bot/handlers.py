@@ -53,7 +53,7 @@ async def start_handler(message: Message):
 
     await check_trigger_status(
         message=message,
-        telegram_id=message.from_user.id
+        telegram_id=user_id
     )
 
 

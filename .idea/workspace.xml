@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.0.0+railway+Procfile">
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.0.3+railway+Procfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/order_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/order_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/today_orders_db/db_orders_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/today_orders_db/db_orders_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +37,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.db_manage.executor": "Run",
+    "Python.db_orders_manage.executor": "Run",
     "Python.handlers.executor": "Run",
+    "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "Python.order.executor": "Run",
     "Python.order_status.executor": "Run",
@@ -56,8 +59,8 @@
       <recent name="C:\Users\andre\SuchefTeleBot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.order">
-    <configuration name="db_auth_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.utils">
+    <configuration name="db_orders_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -66,11 +69,33 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/database" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/database/today_orders_db" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\andre\SuchefTeleBot\backend\database\auth_db\db_auth_manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/database/today_orders_db/db_orders_manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SuchefTeleBot" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -123,28 +148,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="order_status_old" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="SuchefTeleBot" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/client" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\andre\SuchefTeleBot\backend\client\order_status_old.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
@@ -169,11 +172,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.utils" />
+        <item itemvalue="Python.db_orders_manage" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.order" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.utils" />
-        <item itemvalue="Python.order_status_old" />
-        <item itemvalue="Python.db_auth_manage" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +308,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720729537003</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="version 2.0.1+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1720760720951</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720760720952</updated>
+    </task>
+    <task id="LOCAL-00016" summary="version 2.0.2+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1720760978059</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1720760978059</updated>
+    </task>
+    <task id="LOCAL-00017" summary="version 2.0.3+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1720783715897</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1720783715897</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -322,6 +349,9 @@
     <MESSAGE value="version 1.1.7+railway+Procfile" />
     <MESSAGE value="version 1.1.8+railway+Procfile" />
     <MESSAGE value="version 2.0.0+railway+Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 2.0.0+railway+Procfile" />
+    <MESSAGE value="version 2.0.1+railway+Procfile" />
+    <MESSAGE value="version 2.0.2+railway+Procfile" />
+    <MESSAGE value="version 2.0.3+railway+Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 2.0.3+railway+Procfile" />
   </component>
 </project>
