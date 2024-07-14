@@ -171,7 +171,7 @@ class SuchefOrdersDB:
         )
 
 
-'''a = {'phone_number': ['9829764729', '9123936800'],
+a = {'phone_number': ['9829764729', '9123936800'],
      'client': ['Алексей', 'Сергей'],
      'number': ['00НФ-006788', '00НФ-006789'],
      'date': ['2024-07-13T00:00:00', '2024-07-13T00:00:00'],
@@ -190,4 +190,4 @@ class SuchefOrdersDB:
      'delivery_adress': ['Тюменская обл, г Тюмень, ул. Сергея Свиридова, д. 7, кв. 134,п.6, э.4', '625049, Тюменская обл, г Тюмень, ул Паровозная, д. 9, п.1, э.3, кв. 8']}
 
 db = SuchefOrdersDB()
-db.db_insert_orders_data(orders_data=a)'''
+db.db_insert_orders_data(orders_data=a)

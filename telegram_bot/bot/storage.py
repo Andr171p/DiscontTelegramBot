@@ -40,11 +40,21 @@ class TriggerStatusStorage:
         else:
             return False
 
+    def is_unique(self, trigger_status):
+        if trigger_status is self.stack:
+            return -1
+        else:
+            return 1
+
     def check_stack(self, trigger_status):
         if self.is_full():
             self.clear()
             return -1
         elif self.is_empty():
+            self.add(
+                trigger_status=trigger_status
+            )
+        elif self.is_unique(trigger_status=trigger_status) != -1:
             self.add(
                 trigger_status=trigger_status
             )
