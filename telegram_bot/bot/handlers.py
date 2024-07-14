@@ -28,6 +28,7 @@ import asyncio
 router = Router()
 
 suchef_auth_db = SuchefAuthDB()
+suchef_orders_db = SuchefOrdersDB()
 
 user_info_storage = UserInfoStorage()
 
@@ -212,8 +213,6 @@ async def check_trigger_status(message, telegram_id):
     while True:
         today_orders = TodayOrders()
         orders_at_the_time = today_orders.orders_at_the_time()
-
-        suchef_orders_db = SuchefOrdersDB()
 
         suchef_orders_db.db_update_and_clear_data(
             orders_at_the_time=orders_at_the_time
