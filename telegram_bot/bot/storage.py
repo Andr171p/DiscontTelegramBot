@@ -41,7 +41,7 @@ class TriggerStatusStorage:
             return False
 
     def is_unique(self, trigger_status):
-        if trigger_status is self.stack:
+        if trigger_status in self.stack:
             return -1
         else:
             return 1
@@ -58,3 +58,5 @@ class TriggerStatusStorage:
             self.add(
                 trigger_status=trigger_status
             )
+        elif self.is_unique(trigger_status=trigger_status):
+            return -1
