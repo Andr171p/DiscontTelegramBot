@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.0.6+railway+Procfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/order_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/order_status.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,25 +33,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.db_manage.executor": "Run",
-    "Python.db_orders_manage.executor": "Run",
-    "Python.handlers.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.order.executor": "Run",
-    "Python.order_status.executor": "Run",
-    "Python.reception.executor": "Run",
-    "Python.start.executor": "Run",
-    "Python.storage.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/andre/SuchefFlyerTeleBot",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.db_manage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.db_orders_manage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.handlers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.order.executor&quot;: &quot;Run&quot;,
+    &quot;Python.order_status.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reception.executor&quot;: &quot;Run&quot;,
+    &quot;Python.start.executor&quot;: &quot;Run&quot;,
+    &quot;Python.storage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/SuchefFlyerTeleBot&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\andre\SuchefTeleBot\backend\database\auth_db" />
@@ -171,10 +172,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.order" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.storage" />
         <item itemvalue="Python.db_orders_manage" />
         <item itemvalue="Python.utils" />
-        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>

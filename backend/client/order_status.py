@@ -217,7 +217,8 @@ class PrettyStatus:
                     return message
                 else:
                     message = (f"Ваш заказ №{self.number} принят и будет\n"
-                               f"готов к выдаче {self.date} с {self.delivery_time_from} до {self.delivery_time_to} по адресу {self.trade_point}.")
+                               f"готов к выдаче {self.date} с {self.delivery_time_from} до {self.delivery_time_to} по адресу {self.trade_point}\n"
+                               f"Сумма: {self.amount} руб.")
                     return message
             case StatusMessage.transferred_to_the_kitchen:
                 message = (f"Ваш заказ №{self.number} {self.pretty_pay_status()} и\n"
@@ -225,7 +226,7 @@ class PrettyStatus:
                 return message
             case StatusMessage.prepare:
                 message = (f"Ваш заказ №{self.number} {self.pretty_pay_status()} и\n"
-                           f"уже готовиться. Время готовности {self.cooking_time_to}")
+                           f"уже готовится. Время готовности {self.cooking_time_to}")
                 return message
             case StatusMessage.cooked:
                 message = (f"Ваш заказ №{self.number} {self.pretty_pay_status()}\n"
