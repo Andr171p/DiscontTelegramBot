@@ -29,7 +29,7 @@ class TriggerStatusStorage:
         self.stack = set()
 
     def is_full(self):
-        if len(self.stack) >= 3:
+        if len(self.stack) >= 2:
             return True
         else:
             return False
