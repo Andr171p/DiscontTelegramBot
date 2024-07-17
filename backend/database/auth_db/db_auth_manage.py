@@ -1,6 +1,6 @@
 import pymysql
 
-from backend.database.auth_db.db_auth_data import RailwayAccessDB
+from backend.database.db_connect_data import RailwayAccessDB
 
 
 class SuchefAuthDB:

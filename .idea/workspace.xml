@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.0.6+railway+Procfile">
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.0.9+railway+Procfile">
+      <change afterPath="$PROJECT_DIR$/backend/database/db_update_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/client/order_status.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/client/order_status.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/auth_db/db_auth_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/db_connect_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/auth_db/db_auth_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/auth_db/db_auth_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/today_orders_db/db_orders_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/today_orders_db/db_orders_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +57,12 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\SuchefTeleBot\backend\database" />
       <recent name="C:\Users\andre\SuchefTeleBot\backend\database\auth_db" />
       <recent name="C:\Users\andre\SuchefTeleBot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.order">
+  <component name="RunManager" selected="Python.storage">
     <configuration name="db_orders_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
@@ -171,9 +175,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.storage" />
         <item itemvalue="Python.order" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.storage" />
         <item itemvalue="Python.db_orders_manage" />
         <item itemvalue="Python.utils" />
       </list>
@@ -363,7 +367,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720936319887</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="version 2.0.7+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1721018923165</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1721018923165</updated>
+    </task>
+    <task id="LOCAL-00023" summary="version 2.0.7+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1721018946777</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1721018946777</updated>
+    </task>
+    <task id="LOCAL-00024" summary="version 2.0.9+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1721035972430</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1721035972430</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -386,6 +414,8 @@
     <MESSAGE value="version 2.0.4+railway+Procfile" />
     <MESSAGE value="version 2.0.5+railway+Procfile" />
     <MESSAGE value="version 2.0.6+railway+Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 2.0.6+railway+Procfile" />
+    <MESSAGE value="version 2.0.7+railway+Procfile" />
+    <MESSAGE value="version 2.0.9+railway+Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 2.0.9+railway+Procfile" />
   </component>
 </project>
