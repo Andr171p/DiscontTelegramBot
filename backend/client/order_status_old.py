@@ -1,6 +1,6 @@
 import json
 
-from backend.requests1C.order import get_order_response
+from backend.requests1C.webhook_response import WebHookRequests1C
 
 from misc.utils import format_order_number, format_order_time
 from misc.utils import format_order_date, format_trade_card
@@ -9,8 +9,8 @@ from misc.utils import format_order_date, format_trade_card
 class ClientOrder:
     def __init__(self, client_phone_number):
         self.client_phone_number = client_phone_number
-        self.response = get_order_response(
-            client_phone_number=self.client_phone_number
+        self.response = WebHookRequests1C().get_order_response(
+            phone_number=self.client_phone_number
         )
         self.order_dict = None
         self.status_data = None

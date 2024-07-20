@@ -1,6 +1,6 @@
 import json
 
-from backend.requests1C.order import get_all_orders_response
+from backend.requests1C.webhook_response import WebHookRequests1C
 from backend.database.today_orders_db.db_orders_manage import SuchefOrdersDB
 
 
@@ -36,7 +36,7 @@ class TodayOrders:
             self.clients_orders_data = -1
 
     def orders_at_the_time(self):
-        self.response = get_all_orders_response()
+        self.response = WebHookRequests1C().get_all_orders_response()
         self.response_json_to_array()
         self.extract_orders_info_data()
         print(self.clients_orders_data)

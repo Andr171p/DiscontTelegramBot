@@ -1,6 +1,6 @@
 import json
 
-from backend.requests1C.order import get_order_response
+from backend.requests1C.webhook_response import get_order_response
 
 
 class ClientFlyer:
