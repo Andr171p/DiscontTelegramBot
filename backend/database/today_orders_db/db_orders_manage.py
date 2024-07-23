@@ -169,12 +169,12 @@ class SuchefOrdersDB:
             orders_data=orders_at_the_time
         )
 
-    def db_update_sent_status(self, phone_number, trigger_status):
+    def db_update_sent_status(self, client_phone_number, trigger_status):
         self.db_connect()
         try:
             with self.connection.cursor() as cursor:
                 sql_query = "UPDATE `users_orders` SET sent=1 WHERE phone_number=%s AND status IN %s"
-                cursor.execute(sql_query, (phone_number, trigger_status))
+                cursor.execute(sql_query, (client_phone_number, trigger_status))
         except Exception as _ex:
             print(f"[def db_update_sent_status] :\n"
                   f"{_ex}")
@@ -199,3 +199,44 @@ class SuchefOrdersDB:
             self.connection.commit()
             self.connection.close()
             return result
+
+    def db_update_and_set_data(self, orders_at_the_time):
+        self.db_connect()
+        check_order_sql_query = " SELECT *" \
+                          " FROM `users_orders`" \
+                          " WHERE phone_number = %s AND number = %s"
+        try:
+            length = len(list(orders_at_the_time.values())[0])
+            with self.connection.cursor() as cursor:
+                for i in range(length):
+                    # unique values for checking:
+                    check_values = (
+                        orders_at_the_time['phone_number'][i],
+                        orders_at_the_time['number'][i]
+                    )
+                    cursor.execute(check_order_sql_query, check_values)
+                    # get result:
+                    result = cursor.fetchall()
+                    if result:
+                        update_data_sql_query = " UPDATE `users_orders`" \
+                                                " SET status = %s WHERE number = %s"
+                        update_values = (
+                            orders_at_the_time['status'][i],
+                            orders_at_the_time['number'][i]
+                        )
+                        cursor.execute(update_data_sql_query, update_values)
+                    else:
+                        delete_data_sql_query = " DELETE FROM `users_orders`" \
+                                                " WHERE number = %s"
+                        delete_values = (
+                            orders_at_the_time['number'][i]
+                        )
+                        cursor.execute(delete_data_sql_query, delete_values)
+
+        except Exception as _ex:
+            print(f"[def db_update_and_replace_data] : {_ex}")
+        finally:
+            self.connection.commit()
+            self.connection.close()
+
+            print("[def db_update_and_set_data] : data update successfully")

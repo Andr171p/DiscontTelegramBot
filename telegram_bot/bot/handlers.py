@@ -32,8 +32,6 @@ suchef_orders_db = SuchefOrdersDB()
 
 user_info_storage = UserInfoStorage()
 
-trigger_status_storage = TriggerStatusStorage()
-
 
 @router.message(Command("start"))
 async def start_handler(message: Message):
@@ -226,10 +224,13 @@ async def check_trigger_status(message, telegram_id):
 
         if response != -1:
             for order in client_orders:
-                storage_callback = trigger_status_storage.check_stack(
+                suchef_orders_db.db_update_sent_status(
+                    client_phone_number=phone_number,
                     trigger_status=order['status']
                 )
-                if storage_callback != -1:
+                if suchef_orders_db.db_check_sent_status(
+                    client_phone_number=phone_number
+                ) == -1:
                     status = pretty_message_from_response(
                         order_data=order
                     )

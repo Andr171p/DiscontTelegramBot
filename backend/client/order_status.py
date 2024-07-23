@@ -142,16 +142,16 @@ class MyOrderStatus:
                 pretty_status = PrettyStatus(
                     status=order[5],
                     number=order[3],
-                    delivery_time_from=order[11],
-                    delivery_time_to=order[12],
-                    amount=order[6],
-                    pay_status=order[8],
-                    cooking_time_to=order[10],
-                    trade_point=order[14],
-                    delivery_method=order[16],
+                    delivery_time_from=order[12],
+                    delivery_time_to=order[13],
+                    amount=order[7],
+                    pay_status=order[9],
+                    cooking_time_to=order[11],
+                    trade_point=order[15],
+                    delivery_method=order[17],
                     date=order[4],
-                    trade_point_card=order[15],
-                    delivery_adress=order[17]
+                    trade_point_card=order[16],
+                    delivery_adress=order[18]
                 )
                 order_status = pretty_status.message()
                 if order[8] == 'CONFIRMED':
@@ -299,3 +299,6 @@ def pretty_message_from_response(order_data):
 
     return message
 
+
+a = TodayOrders()
+print(a.orders_at_the_time())
