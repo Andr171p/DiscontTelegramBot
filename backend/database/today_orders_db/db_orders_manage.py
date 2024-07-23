@@ -1,6 +1,6 @@
 import pymysql
 
-from backend.database.db_connect_data import RailwayAccessOrdersDB
+from backend.database.db_connect_data import RailwayAccessDB
 
 from misc.utils import format_phone_number
 from misc.utils import format_order_number, format_order_time
@@ -9,7 +9,7 @@ from misc.utils import format_order_date, format_trade_card
 
 class SuchefOrdersDB:
     def __init__(self):
-        self.access_db = RailwayAccessOrdersDB()
+        self.access_db = RailwayAccessDB()
         # self.access_db = AccessDB()
         self.connection = None
         self.users_orders_data = []
@@ -39,6 +39,7 @@ class SuchefOrdersDB:
                                  " number varchar(32)," \
                                  " date varchar(32)," \
                                  " status varchar(32)," \
+                                 " sent int," \
                                  " amount int," \
                                  " pay_link longtext," \
                                  " pay_status varchar(32)," \
@@ -167,3 +168,34 @@ class SuchefOrdersDB:
         self.db_insert_orders_data(
             orders_data=orders_at_the_time
         )
+
+    def db_update_sent_status(self, phone_number, trigger_status):
+        self.db_connect()
+        try:
+            with self.connection.cursor() as cursor:
+                sql_query = "UPDATE `users_orders` SET sent=1 WHERE phone_number=%s AND status IN %s"
+                cursor.execute(sql_query, (phone_number, trigger_status))
+        except Exception as _ex:
+            print(f"[def db_update_sent_status] :\n"
+                  f"{_ex}")
+        finally:
+            self.connection.commit()
+            self.connection.close()
+
+    def db_check_sent_status(self, client_phone_number):
+        self.db_connect()
+        try:
+            sql_query = " SELECT *" \
+                        " FROM `users_orders`" \
+                        " WHERE phone_number=%s AND sent=1"
+            with self.connection.cursor() as cursor:
+                cursor.execute(sql_query, (client_phone_number,))
+                result = cursor.fetchall()
+        except Exception as _ex:
+            print(f"[def db_check_sent_status] :\n"
+                  f"{_ex}")
+            return -1
+        finally:
+            self.connection.commit()
+            self.connection.close()
+            return result

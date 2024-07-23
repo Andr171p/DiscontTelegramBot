@@ -80,6 +80,8 @@ class WebHookRequests1C:
     @staticmethod
     def is_ok(response):
         response_status_code = response.status_code
+        print(f"[status code] :\n"
+              f"{response_status_code}")
         if response_status_code == 200:
             return True
         else:
