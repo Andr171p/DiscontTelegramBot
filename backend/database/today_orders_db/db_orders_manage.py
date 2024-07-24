@@ -211,18 +211,19 @@ class SuchefOrdersDB:
                 for i in range(length):
                     # unique values for checking:
                     check_values = (
-                        orders_at_the_time['phone_number'][i],
-                        orders_at_the_time['number'][i]
+                        format_phone_number(orders_at_the_time['phone_number'][i]),
+                        format_order_number(orders_at_the_time['number'][i])
                     )
                     cursor.execute(check_order_sql_query, check_values)
                     # get result:
                     result = cursor.fetchall()
+                    print(result)
                     if result:
                         update_data_sql_query = " UPDATE `users_orders`" \
                                                 " SET status = %s WHERE number = %s"
                         update_values = (
                             orders_at_the_time['status'][i],
-                            orders_at_the_time['number'][i]
+                            format_order_number(orders_at_the_time['number'][i])
                         )
                         cursor.execute(update_data_sql_query, update_values)
                     else:
