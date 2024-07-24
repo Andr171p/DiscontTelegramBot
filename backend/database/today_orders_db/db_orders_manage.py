@@ -227,7 +227,7 @@ class SuchefOrdersDB:
                     print(result)
                     if result:
                         update_data_sql_query = " UPDATE `users_orders`" \
-                                                " SET status = %s WHERE number = %s"
+                                                " SET status = %s, sent = null WHERE number = %s"
                         update_values = (
                             orders_at_the_time['status'][i],
                             format_order_number(orders_at_the_time['number'][i])
@@ -244,8 +244,52 @@ class SuchefOrdersDB:
                         self.connection.commit()
 
         except Exception as _ex:
-            print(f"[def db_update_and_replace_data] : {_ex}")
+            print(f"[def db_update_and_set_data] : {_ex}")
         finally:
             self.connection.close()
 
             print("[def db_update_and_set_data] : data update successfully")
+
+
+'''db = SuchefOrdersDB()
+s = {
+    'phone_number': ['+7(982)976-47-29'],
+    'client': ['Duha'],
+    'number': ['БТ-074093'],
+    'date': ['2024-07-28T00:00:00'],
+    'status': ['Принят оператором'],
+    'amount': [1537],
+    'pay_link': ['https://securepayments.tinkoff.ru/RZr49tBu'],
+    'pay_status': ['NEW'],
+    'cooking_time_from': ['0001-01-01T00:00:00'],
+    'cooking_time_to': ['0001-01-01T13:40:00'],
+    'delivery_time_from': ['0001-01-01T14:00:00'],
+    'delivery_time_to': ['0001-01-01T14:20:00'],
+    'project': ['Сушеф.рф'],
+    'trade_point': ['Велижанская, 66 к1'],
+    'trade_point_card': ['BeJIu}I{aHcka9I 66 k.1 https://go.2gis.com/eg0zzr'],
+    'delivery_method': ['Самовывоз'],
+    'delivery_adress': ['']
+}
+db.clear_db()
+db.db_insert_orders_data(s)
+d = {
+    'phone_number': ['+7(982)976-47-29'],
+    'client': ['Duha'],
+    'number': ['БТ-074093'],
+    'date': ['2024-07-28T00:00:00'],
+    'status': ['Передан курьеру'],
+    'amount': [1537],
+    'pay_link': ['https://securepayments.tinkoff.ru/RZr49tBu'],
+    'pay_status': ['NEW'],
+    'cooking_time_from': ['0001-01-01T00:00:00'],
+    'cooking_time_to': ['0001-01-01T13:40:00'],
+    'delivery_time_from': ['0001-01-01T14:00:00'],
+    'delivery_time_to': ['0001-01-01T14:20:00'],
+    'project': ['Сушеф.рф'],
+    'trade_point': ['Велижанская, 66 к1'],
+    'trade_point_card': ['BeJIu}I{aHcka9I 66 k.1 https://go.2gis.com/eg0zzr'],
+    'delivery_method': ['Самовывоз'],
+    'delivery_adress': ['']
+}
+db.db_update_and_set_data(orders_at_the_time=d)'''
