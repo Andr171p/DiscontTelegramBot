@@ -1,6 +1,6 @@
 import pymysql
 
-from backend.database.db_connect_data import RailwayAccessDB
+from backend.database.db_connect_data import RailwayAccessDB, AccessDB
 
 from misc.utils import format_phone_number
 from misc.utils import format_order_number, format_order_time
@@ -9,8 +9,8 @@ from misc.utils import format_order_date, format_trade_card
 
 class SuchefOrdersDB:
     def __init__(self):
-        self.access_db = RailwayAccessDB()
-        # self.access_db = AccessDB()
+        # self.access_db = RailwayAccessDB()
+        self.access_db = AccessDB()
         self.connection = None
         self.users_orders_data = []
 
@@ -171,10 +171,14 @@ class SuchefOrdersDB:
 
     def db_update_sent_status(self, client_phone_number, trigger_status):
         self.db_connect()
+        values = (
+            format_phone_number(client_phone_number),
+            trigger_status
+        )
         try:
             with self.connection.cursor() as cursor:
                 sql_query = "UPDATE `users_orders` SET sent=1 WHERE phone_number=%s AND status IN %s"
-                cursor.execute(sql_query, (client_phone_number, trigger_status))
+                cursor.execute(sql_query, values)
         except Exception as _ex:
             print(f"[def db_update_sent_status] :\n"
                   f"{_ex}")
@@ -184,12 +188,15 @@ class SuchefOrdersDB:
 
     def db_check_sent_status(self, client_phone_number):
         self.db_connect()
+        values = (
+            format_phone_number(client_phone_number),
+        )
         try:
             sql_query = " SELECT *" \
                         " FROM `users_orders`" \
                         " WHERE phone_number=%s AND sent=1"
             with self.connection.cursor() as cursor:
-                cursor.execute(sql_query, (client_phone_number,))
+                cursor.execute(sql_query, values)
                 result = cursor.fetchall()
         except Exception as _ex:
             print(f"[def db_check_sent_status] :\n"
@@ -226,6 +233,7 @@ class SuchefOrdersDB:
                             format_order_number(orders_at_the_time['number'][i])
                         )
                         cursor.execute(update_data_sql_query, update_values)
+                        self.connection.commit()
                     else:
                         delete_data_sql_query = " DELETE FROM `users_orders`" \
                                                 " WHERE number = %s"
@@ -233,11 +241,11 @@ class SuchefOrdersDB:
                             orders_at_the_time['number'][i]
                         )
                         cursor.execute(delete_data_sql_query, delete_values)
+                        self.connection.commit()
 
         except Exception as _ex:
             print(f"[def db_update_and_replace_data] : {_ex}")
         finally:
-            self.connection.commit()
             self.connection.close()
 
             print("[def db_update_and_set_data] : data update successfully")
