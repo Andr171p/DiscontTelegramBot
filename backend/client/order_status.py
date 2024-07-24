@@ -37,6 +37,7 @@ class TodayOrders:
 
     def orders_at_the_time(self):
         self.response = WebHookRequests1C().get_all_orders_response()
+        print(self.response)
         self.response_json_to_array()
         self.extract_orders_info_data()
         print(self.clients_orders_data)
