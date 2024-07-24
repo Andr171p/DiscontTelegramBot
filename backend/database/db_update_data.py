@@ -31,6 +31,9 @@ async def db_update_orders_data(timeout=60):
     suchef_orders_db = SuchefOrdersDB()
     # init today orders class:
     today_orders = TodayOrders()
+    suchef_orders_db.db_insert_orders_data(
+        orders_data=today_orders.orders_at_the_time()
+    )
     while True:
         try:
             orders_at_the_time = today_orders.orders_at_the_time()
