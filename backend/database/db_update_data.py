@@ -37,6 +37,7 @@ async def db_update_orders_data(timeout=60):
     while True:
         try:
             orders_at_the_time = today_orders.orders_at_the_time()
+            print(orders_at_the_time)
 
             suchef_orders_db.db_update_and_set_data(
                 orders_at_the_time=orders_at_the_time

@@ -115,3 +115,6 @@ class WebHookRequests1C:
             return response
         except requests.exceptions.Timeout as _ex:
             raise _ex
+
+
+print(WebHookRequests1C().get_all_orders_response())
