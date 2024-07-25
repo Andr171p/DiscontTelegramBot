@@ -126,10 +126,10 @@ class SuchefOrdersDB:
                         delivery_method, delivery_adress
                     )
                     cursor.execute(sql_query, parameters)
+                    self.connection.commit()
         except Exception as _ex:
             print(f"def db_insert_orders_data: {_ex}")
         finally:
-            self.connection.commit()
             self.connection.close()
 
     def db_order_data_from_phone_number(self, client_phone_number):
@@ -293,3 +293,5 @@ d = {
     'delivery_adress': ['']
 }
 db.db_update_and_set_data(orders_at_the_time=d)'''
+
+
