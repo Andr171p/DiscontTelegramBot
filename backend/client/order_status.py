@@ -155,7 +155,7 @@ class MyOrderStatus:
                     delivery_adress=order[18]
                 )
                 order_status = pretty_status.message()
-                if order[8] == 'CONFIRMED':
+                if order[9] == 'CONFIRMED':
                     result.append([order_status])
                 elif order[5] == 'Завершен':
                     result.append([order_status])
@@ -163,7 +163,7 @@ class MyOrderStatus:
                     result.append([order_status])
                 else:
                     result.append(
-                        [order_status, order[7]]
+                        [order_status, order[8]]
                     )
 
             return result
