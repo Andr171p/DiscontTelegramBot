@@ -48,7 +48,7 @@ class OrdersEngineDB:
         self.db_connect()
         with self.connection.cursor() as cursor:
             cursor.execute(OrdersSQL.select_all_data_query)
-            result = cursor.fatchall()
+            result = cursor.fetchall()
         return result
 
     def db_insert_orders_data(self, orders):
@@ -77,7 +77,7 @@ class OrdersEngineDB:
                 OrdersSQL.data_from_phone_number_query,
                 value
             )
-            result = cursor.fatchall()
+            result = cursor.fetchall()
         return result
 
     def db_check_trigger_status(self, phone_number, triggers):
@@ -89,7 +89,7 @@ class OrdersEngineDB:
                 f"{OrdersSQL.check_trigger_status}('{triggers_status}')",
                 value
             )
-            result = cursor.fatchall()
+            result = cursor.fetchall()
         return result
 
     def db_update_sent(self, phone_number, triggers):
