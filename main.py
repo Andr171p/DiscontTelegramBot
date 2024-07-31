@@ -8,11 +8,9 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from telegram_bot.tg_auth_data import BotToken
 from telegram_bot.bot.handlers import router
 
-from backend.database.db_update_data import db_update_orders_data
-
 
 async def main():
-    logging.basicConfig(level=logging.INFO)
+    # logging.basicConfig(level=logging.INFO)
     bot = Bot(token=BotToken().token, parse_mode=ParseMode.HTML)
     dp = Dispatcher(storage=MemoryStorage())
     dp.include_router(router)
@@ -21,12 +19,6 @@ async def main():
 
 
 if __name__ == "__main__":
-    '''logging.basicConfig(level=logging.INFO)
-    asyncio.run(main())'''
-    ioloop = asyncio.get_event_loop()
-    tasks = [
-        ioloop.create_task(db_update_orders_data()),
-        ioloop.create_task(main())
-    ]
-    ioloop.run_until_complete(asyncio.wait(tasks))
-    ioloop.close()
+    logging.basicConfig(level=logging.INFO)
+    asyncio.run(main())
+
