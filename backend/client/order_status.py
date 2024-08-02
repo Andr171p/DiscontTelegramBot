@@ -130,7 +130,7 @@ class OrdersAtTheMoment:
         _orders = orders.copy()
         result = []
         for order in _orders:
-            if order['project'] != project:
+            if order['project'] == project:
                 order['phones'] = order['phones'][0]
                 # format dict:
                 phone_number = order.pop('phones')
