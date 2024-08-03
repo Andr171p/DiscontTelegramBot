@@ -98,9 +98,10 @@ class OrdersEngineDB:
         self.db_connect()
         with self.connection.cursor() as cursor:
             cursor.execute(
-                f"{OrdersSQL.update_sent_query}('{triggers_status}')",
+                OrdersSQL.update_sent_query,
                 value
             )
+        self.connection.commit()
 
     def db_check_sent(self, phone_number):
         values = (phone_number,)

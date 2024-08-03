@@ -27,7 +27,7 @@ class OrdersSQL:
     data_from_phone_number_query = "SELECT * FROM `users_orders` WHERE phone_number = %s"
     update_sent_query = " UPDATE `users_orders`" \
                         " SET sent=1" \
-                        " WHERE phone_number = %s AND status IN "
+                        " WHERE phone_number = %s"
     check_sent_query = " SELECT *" \
                        " FROM `users_orders`" \
                        " WHERE phone_number=%s AND sent=1"

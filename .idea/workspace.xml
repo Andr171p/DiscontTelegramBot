@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.1.16+railway+Procfile">
-      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.1.19+railway+Procfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/orders_db/db_orders_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/orders_db/db_orders_manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/orders_db/db_orders_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/orders_db/db_orders_sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -526,13 +528,34 @@
       <option name="project" value="LOCAL" />
       <updated>1722572850176</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="version 2.1.17+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1722659568071</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1722659568071</updated>
+    </task>
+    <task id="LOCAL-00043" summary="version 2.1.18+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1722659770579</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1722659770579</updated>
+    </task>
+    <task id="LOCAL-00044" summary="version 2.1.19+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1722660008247</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1722660008247</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version 2.0.1+railway+Procfile" />
-    <MESSAGE value="version 2.0.2+railway+Procfile" />
-    <MESSAGE value="version 2.0.3+railway+Procfile" />
     <MESSAGE value="version 2.0.4+railway+Procfile" />
     <MESSAGE value="version 2.0.5+railway+Procfile" />
     <MESSAGE value="version 2.0.6+railway+Procfile" />
@@ -555,6 +578,9 @@
     <MESSAGE value="version 2.1.14+railway+Procfile" />
     <MESSAGE value="version 2.1.15+railway+Procfile" />
     <MESSAGE value="version 2.1.16+railway+Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 2.1.16+railway+Procfile" />
+    <MESSAGE value="version 2.1.17+railway+Procfile" />
+    <MESSAGE value="version 2.1.18+railway+Procfile" />
+    <MESSAGE value="version 2.1.19+railway+Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 2.1.19+railway+Procfile" />
   </component>
 </project>
