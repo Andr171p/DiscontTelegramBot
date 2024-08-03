@@ -52,6 +52,7 @@ class OrdersRepository:
             print(orders)
             if bool(orders):
                 for order in orders:
+                    print(order)
                     sent = self.orders_engine_db.db_check_sent(phone_number=phone_number)
                     print(sent)
                     if not sent:
