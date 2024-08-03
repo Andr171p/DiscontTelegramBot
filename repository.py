@@ -56,7 +56,7 @@ class OrdersRepository:
                     sent = self.orders_engine_db.db_check_sent(phone_number=phone_number)
                     print(sent)
                     if not sent:
-                        status = PrettyStatus(order=order)
+                        status = PrettyStatus(order=order).message()
                         await message.answer(
                             status,
                             reply_markup=await pay_link_keyboard(pay_link=order['pay_link'])
