@@ -49,9 +49,11 @@ class OrdersRepository:
                 phone_number=phone_number,
                 triggers=self.triggers
             )
+            print(orders)
             if bool(orders):
                 for order in orders:
                     sent = self.orders_engine_db.db_check_sent(phone_number=phone_number)
+                    print(sent)
                     if not sent:
                         status = PrettyStatus(order=order)
                         await message.answer(
