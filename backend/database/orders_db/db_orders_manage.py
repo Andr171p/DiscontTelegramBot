@@ -33,16 +33,19 @@ class OrdersEngineDB:
         self.db_connect()
         with self.connection.cursor() as cursor:
             cursor.execute(OrdersSQL.create_table_query)
+        self.connection.commit()
 
     def db_drop_orders_table(self):
         self.db_connect()
         with self.connection.cursor() as cursor:
             cursor.execute(OrdersSQL.drop_table_query)
+        self.connection.commit()
 
     def db_clear_table(self):
         self.db_connect()
         with self.connection.cursor() as cursor:
             cursor.execute(OrdersSQL.clear_table_query)
+        self.connection.commit()
 
     def db_select_all_data(self):
         self.db_connect()
@@ -59,6 +62,7 @@ class OrdersEngineDB:
                 OrdersSQL.insert_data_query,
                 values
             )
+        self.connection.commit()
 
     def db_insert_order_data(self, order_from_db):
         values = InsertValues(db_row_data=order_from_db).create_values_tuple()
@@ -68,6 +72,7 @@ class OrdersEngineDB:
                 OrdersSQL.insert_data_query,
                 values
             )
+        self.connection.commit()
 
     def db_order_data_from_phone_number(self, phone_number):
         value = (phone_number,)
@@ -158,3 +163,4 @@ class OrdersEngineDB:
                     OrdersSQL.insert_data_query,
                     values
                 )
+        self.connection.commit()

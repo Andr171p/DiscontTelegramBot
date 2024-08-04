@@ -89,5 +89,5 @@ class Server1CRequests:
         return response
 
 
-'''r = asyncio.run(Server1CRequests().get_orders_response())
-print(r)'''
+r = asyncio.run(Server1CRequests().get_orders_response())
+print(r)
