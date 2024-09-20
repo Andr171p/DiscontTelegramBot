@@ -4,7 +4,7 @@ from aiogram.types import KeyboardButton
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.types import InlineKeyboardButton
 
-from telegram_bot.bot.keyboards.buttons import RegisterButtons
+from telegram.bot.keyboards.buttons import RegisterButtons
 
 
 async def start_keyboard():

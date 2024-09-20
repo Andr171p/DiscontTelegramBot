@@ -5,7 +5,7 @@ from aiogram.types import InlineKeyboardButton
 from aiogram.types import InlineKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-from telegram_bot.bot.keyboards.buttons import OrderStatusButtons, PayLinkButton
+from telegram.bot.keyboards.buttons import OrderStatusButtons, PayLinkButton
 
 
 async def order_status_keyboard():

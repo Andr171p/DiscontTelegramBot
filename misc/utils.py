@@ -1,21 +1,10 @@
-class DataUtils:
-    @staticmethod
-    def values_from_key(data, key):
-        values = {row[key] for row in data}
-        return values
+import json
 
-    def intersection_list(self, data, new_data, key):
-        old_values_from_key = self.values_from_key(
-            data=data,
-            key=key
-        )
-        result = [row for row in new_data if row[key] in old_values_from_key]
-        return result
+from typing import Any
 
-    def subtract_list(self, data, new_data, key):
-        old_values_from_key = self.values_from_key(
-            data=data,
-            key=key
-        )
-        result = [row for row in new_data if row[key] not in old_values_from_key]
-        return result
+
+def json_to_dict(_json) -> Any:
+    _json = json.dumps(_json, ensure_ascii=False)
+    _dict = json.loads(_json)
+    data = _dict['data']
+    return data

@@ -3,19 +3,19 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.filters import Command
 from aiogram.fsm.context import FSMContext
 
-from telegram_bot.bot.messages import MessageInterface
+from telegram.bot.messages import MessageInterface
 
-from telegram_bot.bot.keyboards.register_kb import start_keyboard, check_phone_number_keyboard, re_register_keyboard
-from telegram_bot.bot.keyboards.order_status_kb import order_status_keyboard, pay_link_keyboard
-from telegram_bot.bot.keyboards.buttons import OrderStatusButtons
+from telegram.bot.keyboards.register_kb import start_keyboard, check_phone_number_keyboard, re_register_keyboard
+from telegram.bot.keyboards.order_status_kb import order_status_keyboard, pay_link_keyboard
+from telegram.bot.keyboards.buttons import OrderStatusButtons
 
-from telegram_bot.bot.state import UserPhoneNumberForm, ReplaceUserPhoneNumberForm
+from telegram.bot.state import UserPhoneNumberForm, ReplaceUserPhoneNumberForm
 
-from telegram_bot.bot.storage import UserInfoStorage, TriggerStatusStorage
+from telegram.bot.storage import UserInfoStorage, TriggerStatusStorage
 
 from backend.database.auth_db.db_auth_manage import SuchefAuthDB
 
-from misc.format_data import format_phone_number
+from misc.format import format_phone_number
 
 from repository import OrdersRepository
 

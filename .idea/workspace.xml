@@ -4,10 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.1.19+railway+Procfile">
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 2.1.20+railway+Procfile">
+      <change afterPath="$PROJECT_DIR$/api/http_session.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/logs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration/reg_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/registration/reg_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/status/status_request.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/status/status_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rmq/connect.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rmq/consumer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rmq/settings/logs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rmq/settings/queue_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rmq/settings/server_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/telegram/bot/handlers/register.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/telegram/bot/handlers/start.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/telegram/bot/handlers/status.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/telegram/tg_auth_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/orders_db/db_orders_manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/orders_db/db_orders_manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/orders_db/db_orders_sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/orders_db/db_orders_sql.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/client/order_status.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/auth_db/db_auth_manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/db_connect_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/db_update_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/orders_db/db_orders_manage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/database/orders_db/db_orders_sql.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server1C/webhook_api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/server1C/webhook_exchange.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/format_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/format.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/row_wrapper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/misc/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/keyboards/buttons.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/keyboards/buttons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/keyboards/order_status_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/keyboards/order_status_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/keyboards/register_kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/keyboards/register_kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/messages.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/messages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/state.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/bot/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram_bot/tg_auth_data.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +70,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.consumer.executor": "Run",
     "Python.db_manage.executor": "Run",
     "Python.db_orders_manage (1).executor": "Run",
     "Python.db_orders_manage.executor": "Run",
@@ -45,26 +81,35 @@
     "Python.order.executor": "Run",
     "Python.order_status.executor": "Run",
     "Python.reception.executor": "Run",
+    "Python.reg_request.executor": "Run",
+    "Python.reg_service.executor": "Run",
     "Python.start.executor": "Run",
+    "Python.status.executor": "Run",
+    "Python.status_request.executor": "Run",
+    "Python.status_service.executor": "Run",
     "Python.storage.executor": "Run",
     "Python.utils.executor": "Run",
     "Python.webhook_exchange.executor": "Run",
     "Python.webhook_response (1).executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/andre/SuchefFlyerTeleBot",
+    "last_opened_file_path": "C:/Users/andre/SuchefTeleBot/rmq",
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\SuchefTeleBot\rmq" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\SuchefTeleBot\api\registration" />
       <recent name="C:\Users\andre\SuchefTeleBot\backend\database" />
       <recent name="C:\Users\andre\SuchefTeleBot\backend\database\auth_db" />
       <recent name="C:\Users\andre\SuchefTeleBot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.db_orders_manage (1)">
-    <configuration name="db_orders_manage (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.status_service">
+    <configuration name="consumer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -73,11 +118,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/database/orders_db" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/rmq" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/database/orders_db/db_orders_manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rmq/consumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -86,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="db_orders_manage" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="reg_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -95,11 +140,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/database/today_orders_db" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api/registration" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/database/today_orders_db/db_orders_manage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/registration/reg_service.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,7 +153,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="status" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -117,11 +162,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/telegram/bot/handlers" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/telegram/bot/handlers/status.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,7 +175,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="order_status" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="status_request" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,11 +184,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/client" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api/status" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/client/order_status.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/status/status_request.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,7 +197,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="webhook_exchange" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="status_service" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SuchefTeleBot" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,11 +206,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend/server1C" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api/status" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/server1C/webhook_exchange.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/status/status_service.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.db_orders_manage (1)" />
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.order_status" />
-        <item itemvalue="Python.webhook_exchange" />
-        <item itemvalue="Python.db_orders_manage" />
+        <item itemvalue="Python.status_service" />
+        <item itemvalue="Python.status" />
+        <item itemvalue="Python.reg_service" />
+        <item itemvalue="Python.status_request" />
+        <item itemvalue="Python.consumer" />
       </list>
     </recent_temporary>
   </component>
@@ -552,11 +597,18 @@
       <option name="project" value="LOCAL" />
       <updated>1722660008247</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="version 2.1.20+railway+Procfile">
+      <option name="closed" value="true" />
+      <created>1722660401773</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1722660401773</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version 2.0.4+railway+Procfile" />
     <MESSAGE value="version 2.0.5+railway+Procfile" />
     <MESSAGE value="version 2.0.6+railway+Procfile" />
     <MESSAGE value="version 2.0.7+railway+Procfile" />
@@ -581,6 +633,7 @@
     <MESSAGE value="version 2.1.17+railway+Procfile" />
     <MESSAGE value="version 2.1.18+railway+Procfile" />
     <MESSAGE value="version 2.1.19+railway+Procfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 2.1.19+railway+Procfile" />
+    <MESSAGE value="version 2.1.20+railway+Procfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 2.1.20+railway+Procfile" />
   </component>
 </project>

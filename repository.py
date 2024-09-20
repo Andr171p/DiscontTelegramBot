@@ -5,10 +5,10 @@ from backend.client.order_status import TriggerOrdersStatus
 from backend.database.auth_db.db_auth_manage import SuchefAuthDB
 from backend.database.orders_db.db_orders_manage import OrdersEngineDB
 
-from telegram_bot.bot.keyboards.order_status_kb import pay_link_keyboard
-from telegram_bot.bot.keyboards.register_kb import re_register_keyboard
+from telegram.bot.keyboards.order_status_kb import pay_link_keyboard
+from telegram.bot.keyboards.register_kb import re_register_keyboard
 
-from telegram_bot.bot.messages import MessageInterface
+from telegram.bot.messages import MessageInterface
 
 import asyncio
 

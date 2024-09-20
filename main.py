@@ -5,8 +5,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.enums.parse_mode import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from telegram_bot.tg_auth_data import BotToken
-from telegram_bot.bot.handlers import router
+from telegram.tg_auth_data import BotToken
+from telegram.bot.handlers import router
 
 
 async def main():
