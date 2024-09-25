@@ -10,3 +10,4 @@ class RegistrationEndPoints:
     CHECK_USER = "/check_user/"
     GET_PHONE = "/get_phone/"
     REPLACE_USER = "/replace_user/"
+    GET_USER_ID = "/get_user_id/"

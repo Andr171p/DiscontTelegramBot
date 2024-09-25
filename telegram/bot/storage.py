@@ -14,7 +14,7 @@ class UserInfoStorage:
         return {
             "user_id": cls.user_id,
             "username": cls.username,
-            "phone": cls.telefon
+            "phone": cls.phone
         }
 
     @classmethod

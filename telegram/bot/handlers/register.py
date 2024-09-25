@@ -42,13 +42,13 @@ async def valid_phone_handler(callback: CallbackQuery) -> None:
     await callback.answer()
     data = user_info_storage.data()
     user_id, username, phone = data['user_id'], data['username'], data['phone']
-    _user = registration_api.create_user(
+    _user = await registration_api.create_user(
         user_id=user_id,
         username=username,
         phone=phone
     )
     await callback.message.answer(
-        IMessage.START_REGISTER_MESSAGE,
+        IMessage.SUCCESS_REGISTER_MESSAGE,
         reply_markup=await order_status_keyboard()
     )
 
@@ -70,7 +70,7 @@ async def input_phone_handler(
     data = await state.get_data()
     user_info = user_info_storage.data()
     user_id, username, phone = user_info['user_id'], user_info['username'], format_phone(data['phone'])
-    _user = registration_api.create_user(
+    _user = await registration_api.create_user(
         user_id=user_id,
         username=username,
         phone=phone

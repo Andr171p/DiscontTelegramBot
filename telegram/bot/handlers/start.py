@@ -18,7 +18,7 @@ start_router = Router()
 async def start_handler(message: Message) -> None:
     user_id = message.from_user.id
     username = message.from_user.username
-    user_exists = registration_api.check_user(user_id=user_id)
+    user_exists = await registration_api.check_user(user_id=user_id)
     if user_exists:
         await message.answer(
             IMessage.ALREADY_REGISTER_MESSAGE,
@@ -29,4 +29,4 @@ async def start_handler(message: Message) -> None:
             IMessage.start(username=username),
             reply_markup=await start_keyboard()
         )
-    await rmq_consumer.consume()
+    # await rmq_consumer.consume()

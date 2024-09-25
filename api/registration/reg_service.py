@@ -4,6 +4,8 @@ from api.registration.reg_request import (
     RegistrationEndPoints
 )
 
+from loguru import logger
+
 from misc.utils import json_to_dict
 
 from typing import List
@@ -27,12 +29,14 @@ class RegistrationAPI(HTTPSession):
             data=data
         )
         user = json_to_dict(_json=response)
+        logger.info(user)
         return user
 
     async def get_users(self) -> List[dict]:
         url = self.url(end_point=self.end_points.GET_USERS)
         response = await self.get_request(url=url)
         users = json_to_dict(_json=response)
+        logger.info(users)
         return users
 
     async def create_user(
@@ -48,7 +52,9 @@ class RegistrationAPI(HTTPSession):
             url=url,
             data=data
         )
+        print(response)
         user = json_to_dict(_json=response)
+        logger.info(user)
         return user
 
     async def check_user(self, user_id: int) -> bool:
@@ -61,6 +67,7 @@ class RegistrationAPI(HTTPSession):
             data=data
         )
         exists = json_to_dict(_json=response)
+        logger.info(exists)
         return exists
 
     async def get_phone(self, user_id: int) -> str:
@@ -73,7 +80,21 @@ class RegistrationAPI(HTTPSession):
             data=data
         )
         phone = json_to_dict(_json=response)
+        logger.info(phone)
         return phone
+
+    async def get_user_id(self, phone: str) -> int:
+        url = self.url(end_point=self.end_points.GET_USER_ID)
+        data = {
+            'phone': phone
+        }
+        response = await self.post_request(
+            url=url,
+            data=data
+        )
+        user_id = json_to_dict(_json=response)
+        logger.info(user_id)
+        return user_id
 
     async def replace_phone(self, user_id: int, phone: str) -> bool:
         url = self.url(end_point=self.end_points.REPLACE_USER)
@@ -86,6 +107,7 @@ class RegistrationAPI(HTTPSession):
             data=data
         )
         user = json_to_dict(_json=response)
+        logger.info(user)
         return bool(user)
 
 
