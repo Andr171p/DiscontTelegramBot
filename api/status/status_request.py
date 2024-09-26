@@ -1,8 +1,14 @@
-class StatusRequest:
-    STATUS_URL = "https://statusservice-production.up.railway.app"
-    PREFIX = "/api/statuses"
+class RequestHeaders:
+    url = 'https://noname-sushi.online/web/hs/hook?token=NTAxNGVhNWMtZTUwYi00NTdjLTk5NTctNmIyMmM2N2U5NzRh'
+    headers = {
+            'Content-Type': 'application/json; charset=UTF-8'
+        }
+    project = 'Сушеф.рф'
+    timeout = 30
 
 
-class StatusEndPoints:
-    USER_ORDERS = "/user_orders/"
-    USER_FLYERS = "/user_flyers/"
+class RequestData:
+    order = 'status'
+    orders = 'statuses'
+    flyer = 'bonus'
+    history = 'history'

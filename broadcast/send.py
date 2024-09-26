@@ -26,7 +26,8 @@ class Broadcast(SetBot):
             )
             logger.info(RMQLoggingMessage.SUCCESSFUL_SEND_MESSAGE.format(message))
 
-    async def broadcast(self, timeout: float = 15) -> None:
+    async def broadcast(self, timeout: float = 60) -> None:
         while True:
             await rmq_consumer.consume(callback=self.callback)
+            logger.info("STOP CONSUMING, WAITING 60s ...")
             await asyncio.sleep(timeout)

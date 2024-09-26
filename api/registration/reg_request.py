@@ -9,5 +9,5 @@ class RegistrationEndPoints:
     CREATE_USER = "/create_user/"
     CHECK_USER = "/check_user/"
     GET_PHONE = "/get_phone/"
-    REPLACE_USER = "/replace_user/"
+    REPLACE_PHONE = "/replace_phone/"
     GET_USER_ID = "/get_user_id/"

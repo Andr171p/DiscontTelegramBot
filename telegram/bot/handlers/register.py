@@ -16,6 +16,8 @@ from api.registration.reg_service import registration_api
 
 from misc.format import format_phone
 
+from loguru import logger
+
 
 register_router = Router()
 
@@ -31,6 +33,7 @@ async def register_user_handler(message: Message) -> None:
         username=username,
         phone=phone
     )
+    logger.info(f"START REGISTER USER: {user_info_storage}")
     await message.answer(
         IMessage.phone_question(phone=phone),
         reply_markup=await check_phone_number_keyboard()
@@ -47,6 +50,7 @@ async def valid_phone_handler(callback: CallbackQuery) -> None:
         username=username,
         phone=phone
     )
+    logger.info(f"USER CREATED: {user_info_storage}")
     await callback.message.answer(
         IMessage.SUCCESS_REGISTER_MESSAGE,
         reply_markup=await order_status_keyboard()
@@ -66,7 +70,9 @@ async def invalid_phone_handler(
 async def input_phone_handler(
         message: Message, state: FSMContext
 ) -> None:
-    await state.update_data(phone=message.text)
+    phone = message.text
+    await state.update_data(phone=phone)
+    logger.info(f"USER WRITE PHONE NUMBER: {phone}")
     data = await state.get_data()
     user_info = user_info_storage.data()
     user_id, username, phone = user_info['user_id'], user_info['username'], format_phone(data['phone'])
@@ -105,15 +111,18 @@ async def replace_phone_handler(
         message: Message, state: FSMContext
 ) -> None:
     user_id = message.from_user.id
-    await state.update_data(phone=message.text)
+    phone = message.text
+    logger.info(f"USER WRITE PHONE: {phone}")
+    await state.update_data(phone=phone)
     data = await state.get_data()
-    phone = format_phone(phone_number=data['phone'])
+    phone = format_phone(phone=data['phone'])
     user = await registration_api.replace_phone(
         user_id=user_id,
         phone=phone
     )
+    logger.info(user)
     await message.answer(
-        IMessage.START_REGISTER_MESSAGE,
+        IMessage.SUCCESS_REGISTER_MESSAGE,
         reply_markup=await order_status_keyboard()
     )
     await state.clear()

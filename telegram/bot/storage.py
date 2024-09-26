@@ -3,6 +3,9 @@ class UserInfoStorage:
     username = None
     phone = None
 
+    def __repr__(self):
+        return f"(user_id={self.user_id}, username={self.username}, phone={self.phone})"
+
     @classmethod
     def add(cls, user_id, username, phone):
         cls.user_id = user_id

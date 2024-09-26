@@ -12,8 +12,8 @@ class RMQConsumer(RMQConnection):
         await cls.connect()
         async with cls.connection:
             queue = await cls.create_queue()
-            await queue.consume(callback)
             logger.info(RMQLoggingMessage.START_CONSUMING)
+            await queue.consume(callback)
 
 
 rmq_consumer = RMQConsumer()

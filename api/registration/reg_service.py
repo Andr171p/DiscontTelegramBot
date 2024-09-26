@@ -97,7 +97,7 @@ class RegistrationAPI(HTTPSession):
         return user_id
 
     async def replace_phone(self, user_id: int, phone: str) -> bool:
-        url = self.url(end_point=self.end_points.REPLACE_USER)
+        url = self.url(end_point=self.end_points.REPLACE_PHONE)
         data = {
             'user_id': user_id,
             'phone': phone
@@ -106,6 +106,7 @@ class RegistrationAPI(HTTPSession):
             url=url,
             data=data
         )
+        logger.info(response)
         user = json_to_dict(_json=response)
         logger.info(user)
         return bool(user)

@@ -1,8 +1,8 @@
 import re
 
 
-def format_phone(phone_number):
-    digits = ''.join(filter(str.isdigit, phone_number))
+def format_phone(phone):
+    digits = ''.join(filter(str.isdigit, phone))
 
     if len(digits) == 11 and digits.startswith('8'):
         digits = '7' + digits[1:]
