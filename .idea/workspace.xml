@@ -4,20 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 3.0.1">
-      <change afterPath="$PROJECT_DIR$/api/status/status_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/misc/tamplates.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/registration/reg_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registration/reg_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/registration/reg_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/registration/reg_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/status/status_request.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/status/status_request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/status/status_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/status/status_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/broadcast/send.py" beforeDir="false" afterPath="$PROJECT_DIR$/broadcast/send.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/format.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/format.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/misc/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rmq/consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/rmq/consumer.py" afterDir="false" />
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="version 3.0.2">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/http_session.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/http_session.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/telegram/bot/handlers/register.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/handlers/register.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telegram/bot/storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram/bot/handlerss.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -598,11 +592,18 @@
       <option name="project" value="LOCAL" />
       <updated>1727277792666</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="version 3.0.2">
+      <option name="closed" value="true" />
+      <created>1727333074245</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1727333074245</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version 2.0.7+railway+Procfile" />
     <MESSAGE value="version 2.0.9+railway+Procfile" />
     <MESSAGE value="version 2.1.0+railway+Procfile" />
     <MESSAGE value="version 2.1.1+railway+Procfile" />
@@ -627,6 +628,7 @@
     <MESSAGE value="version 2.1.20+railway+Procfile" />
     <MESSAGE value="version 3.0.0" />
     <MESSAGE value="version 3.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 3.0.1" />
+    <MESSAGE value="version 3.0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 3.0.2" />
   </component>
 </project>
