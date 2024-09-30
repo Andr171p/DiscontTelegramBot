@@ -15,7 +15,7 @@ class HTTPSession:
         return True if status in range(200, 300) else False
 
     @classmethod
-    async def get_request(cls, url: str):
+    async def get_request(cls, url: str) -> str:
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(

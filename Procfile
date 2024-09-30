@@ -1,1 +1,0 @@
-DiscontTelegramBot: python main.py

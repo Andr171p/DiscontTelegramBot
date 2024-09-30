@@ -52,8 +52,8 @@ async def valid_phone_handler(callback: CallbackQuery) -> None:
     )
     logger.info(f"USER CREATED: {user_info_storage}")
     await callback.message.answer(
-        IMessage.SUCCESS_REGISTER_MESSAGE,
-        reply_markup=await order_status_keyboard()
+            IMessage.SUCCESS_REGISTER_MESSAGE,
+            reply_markup=await order_status_keyboard()
     )
 
 
