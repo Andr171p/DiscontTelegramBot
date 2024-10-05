@@ -22,8 +22,8 @@ def check_status(message: dict) -> dict | None:
 
 
 class LoadMessage:
-    def __init__(self, body: str) -> None:
-        self.body = body
+    def __init__(self, body: str | bytes) -> None:
+        self.body = body.decode('utf-8')
 
     def load(self) -> dict:
         _dict = json.loads(self.body)

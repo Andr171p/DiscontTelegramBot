@@ -13,18 +13,21 @@ from broadcast.process import (
 from telegram.bot.keyboards.order_status_kb import pay_link_keyboard
 
 import asyncio
+from aio_pika.abc import AbstractIncomingMessage
 
 
 class Broadcast(SetBot):
-    async def callback(self, ch, method, properties, body) -> None:
-        message = await Message(body=body).message()
-        if check_status(message=message):
-            await self.bot.send_message(
-                chat_id=message['user_id'],
-                text=message['message'],
-                reply_markup=await pay_link_keyboard(pay_link=message['pay_link'])
-            )
-            logger.info(RMQLoggingMessage.SUCCESSFUL_SEND_MESSAGE.format(message))
+    async def callback(self, message: AbstractIncomingMessage) -> None:
+        async with message.process():
+            message = await Message(body=message.body).message()
+            logger.info(RMQLoggingMessage.CONSUMED_MESSAGE.format(message=message))
+            if check_status(message=message):
+                await self.bot.send_message(
+                    chat_id=message['user_id'],
+                    text=message['message'],
+                    reply_markup=await pay_link_keyboard(pay_link=message['pay_link'])
+                )
+                logger.info(RMQLoggingMessage.SUCCESSFUL_SEND_MESSAGE.format(message))
 
     async def broadcast(self, timeout: float = 60) -> None:
         while True:
