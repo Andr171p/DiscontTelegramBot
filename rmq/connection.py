@@ -25,8 +25,10 @@ class RMQConnection:
         if cls.channel is None:
             await cls.connect()
         queue = await cls.channel.declare_queue(QueueConfig.QUEUE_NAME)
+        logger.info(RMQLoggingMessage.QUEUE_CREATED.format(queue=queue))
         return queue
 
     @classmethod
     async def close(cls) -> None:
         await cls.connection.close()
+        logger.info(RMQLoggingMessage.SUCCESSFULLY_CLOSED)
