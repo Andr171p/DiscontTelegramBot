@@ -1,5 +1,4 @@
 import json
-import asyncio
 
 from broadcast.triggers import (
     TriggerProject,

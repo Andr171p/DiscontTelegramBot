@@ -3,8 +3,11 @@ from redis import Redis
 from typing import List
 
 from cache.models import RedisUserModel
+from cache.settings import RedisLogs
 
 from misc.utils import timestamp
+
+from loguru import logger
 
 
 async def mapping(_redis: Redis, _user_id: int, _username: str, _phone: str) -> None:
@@ -20,6 +23,7 @@ async def mapping(_redis: Redis, _user_id: int, _username: str, _phone: str) -> 
 
 async def get_keys(_redis: Redis) -> list:
     _keys = await _redis.keys("*")
+    logger.info(RedisLogs.GET_KEYS_LOG.format(keys=_keys))
     return _keys
 
 
