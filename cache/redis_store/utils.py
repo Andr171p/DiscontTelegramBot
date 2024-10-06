@@ -19,7 +19,7 @@ async def mapping(_redis: Redis, _user_id: int, _username: str, _phone: str) -> 
 
 
 async def get_keys(_redis: Redis) -> list:
-    _keys = await _redis.keys('*')
+    _keys = await _redis.keys("*")
     return _keys
 
 
