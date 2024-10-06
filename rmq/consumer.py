@@ -8,21 +8,13 @@ from typing import Any
 
 
 class RMQConsumer(RMQConnection):
-
     @classmethod
-    async def consume(cls, queue: Any, callback: callable) -> None:
-        logger.info(RMQLoggingMessage.START_CONSUMING)
-        async with queue.iterator() as queue:
-            async for message in queue:
-                logger.info(message)
-                await callback(message)
-
-    @classmethod
-    async def receive(cls) -> Any:
-        await cls.connect()
+    async def consume(cls, callback: callable) -> None:
         queue = await cls.create_queue()
-        await cls.close()
-        return queue
+        async with queue.iterator() as queue_iter:
+            async for message in queue_iter:
+                async with message.process():
+                    await callback(message)
 
 
 rmq_consumer = RMQConsumer()
