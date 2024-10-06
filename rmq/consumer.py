@@ -14,6 +14,7 @@ class RMQConsumer(RMQConnection):
         async with queue.iterator() as queue_iter:
             async for message in queue_iter:
                 async with message.process():
+                    logger.info(message)
                     await callback(message)
 
 
