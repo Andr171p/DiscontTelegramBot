@@ -27,7 +27,7 @@ class CacheUsersManager:
     async def check_cache_user(cls, user_id: int) -> bool:
         redis_get_user = RedisGetUsers(url=cls.url)
         user = await redis_get_user.get(user_id=user_id)
-        return True if user else False
+        return True if user.user_id is not None else False
 
     @classmethod
     async def delete_cache_user(cls, user_id: int) -> None:
