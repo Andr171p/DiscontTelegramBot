@@ -6,11 +6,12 @@ from broadcast.triggers import (
     TriggerStatuses
 )
 
-from api.registration.reg_service import registration_api
+from cache.manager import cache_users_manager
 
 
 async def user_id_from_phone(phone: str) -> int:
-    user_id = await registration_api.get_user_id(phone=phone)
+    # user_id = await registration_api.get_user_id(phone=phone)
+    user_id = await cache_users_manager.get_cache_user_id(phone=phone)
     return user_id
 
 
