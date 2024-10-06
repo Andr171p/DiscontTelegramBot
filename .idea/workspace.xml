@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="Discount telegram bot service 1.1.1">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0a42f4b2-28ed-4892-b0b8-28bbbb8293d6" name="Changes" comment="Discount telegram bot service 1.1.3">
+      <change beforePath="$PROJECT_DIR$/api/status/status_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/status/status_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/cleaner.py" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis_store/cleaner.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/connection.py" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis_store/connection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/get.py" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis_store/get.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache/manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/cache/manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/set.py" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis_store/set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/cache/redis_store/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram/bot/handlers/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/handlers/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/telegram/bot/handlers/status.py" beforeDir="false" afterPath="$PROJECT_DIR$/telegram/bot/handlers/status.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,11 +74,11 @@
       <recent name="C:\Users\andre\SuchefTeleBot\rmq" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\andre\SuchefTeleBot\cache\redis_store" />
       <recent name="C:\Users\andre\SuchefTeleBot\broadcast" />
       <recent name="C:\Users\andre\SuchefTeleBot\api\registration" />
       <recent name="C:\Users\andre\SuchefTeleBot\backend\database" />
       <recent name="C:\Users\andre\SuchefTeleBot\backend\database\auth_db" />
-      <recent name="C:\Users\andre\SuchefTeleBot" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -210,22 +217,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718166946220</updated>
-    </task>
-    <task id="LOCAL-00005" summary="version 1.1.1+railway+Procfile">
-      <option name="closed" value="true" />
-      <created>1719249179039</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1719249179039</updated>
-    </task>
-    <task id="LOCAL-00006" summary="version 1.1.1+railway+Procfile">
-      <option name="closed" value="true" />
-      <created>1719249198449</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1719249198449</updated>
     </task>
     <task id="LOCAL-00007" summary="version 1.1.2+railway+Procfile">
       <option name="closed" value="true" />
@@ -603,12 +594,26 @@
       <option name="project" value="LOCAL" />
       <updated>1728200487665</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Discount telegram bot service 1.1.2">
+      <option name="closed" value="true" />
+      <created>1728200831262</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1728200831262</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Discount telegram bot service 1.1.3">
+      <option name="closed" value="true" />
+      <created>1728200912873</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1728200912873</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version 2.1.4+railway+Procfile" />
-    <MESSAGE value="version 2.1.5+railway+Procfile" />
     <MESSAGE value="version 2.1.6+railway+Procfile" />
     <MESSAGE value="version 2.1.7+railway+Procfile" />
     <MESSAGE value="version 2.1.8+railway+Procfile" />
@@ -632,6 +637,8 @@
     <MESSAGE value="Discount telegram bot service 1.0.2" />
     <MESSAGE value="Discount telegram bot service 1.1.0" />
     <MESSAGE value="Discount telegram bot service 1.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Discount telegram bot service 1.1.1" />
+    <MESSAGE value="Discount telegram bot service 1.1.2" />
+    <MESSAGE value="Discount telegram bot service 1.1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Discount telegram bot service 1.1.3" />
   </component>
 </project>

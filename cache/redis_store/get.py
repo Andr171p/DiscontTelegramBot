@@ -15,8 +15,8 @@ class RedisGetUsers(RedisConnection):
         )
         user = RedisUserModel(
             user_id=user_id,
-            username=username,
-            phone=phone
+            username=username.decode('utf-8'),
+            phone=phone.decode('utf-8')
         )
         await self.close()
         logger.info(RedisLogs.GET_USER_LOG.format(user=user))
