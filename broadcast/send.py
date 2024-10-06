@@ -19,6 +19,7 @@ from aio_pika.abc import AbstractIncomingMessage
 class Broadcast(SetBot):
     async def callback(self, message: AbstractIncomingMessage) -> None:
         async with message.process():
+            logger.info(RMQLoggingMessage.START_PROCESS_MESSAGE)
             message = await Message(body=message.body).message()
             logger.info(RMQLoggingMessage.CONSUMED_MESSAGE.format(message=message))
             if check_status(message=message):
@@ -27,7 +28,7 @@ class Broadcast(SetBot):
                     text=message['message'],
                     reply_markup=await pay_link_keyboard(pay_link=message['pay_link'])
                 )
-                logger.info(RMQLoggingMessage.SUCCESSFUL_SEND_MESSAGE.format(message))
+                logger.info(RMQLoggingMessage.SUCCESSFUL_SEND_MESSAGE.format(message=message))
 
     async def broadcast(self, timeout: float = 60) -> None:
         while True:
