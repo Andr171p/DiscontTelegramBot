@@ -11,6 +11,7 @@ class RMQConsumer(RMQConnection):
 
     @classmethod
     async def consume(cls, queue: Any, callback: callable) -> None:
+        logger.info(RMQLoggingMessage.START_CONSUMING)
         async with queue.iterator() as queue:
             async for message in queue:
                 logger.info(message)
