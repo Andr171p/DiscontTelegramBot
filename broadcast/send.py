@@ -33,8 +33,6 @@ class Broadcast(SetBot):
 
     async def broadcast(self, timeout: float = 60) -> None:
         while True:
-            await rmq_consumer.consume(
-                callback=self.callback
-            )
+            await rmq_consumer.consume(callback=self.callback)
             logger.info("STOP CONSUMING, WAITING 60s ...")
             await asyncio.sleep(timeout)
