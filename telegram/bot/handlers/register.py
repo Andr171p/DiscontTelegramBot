@@ -14,6 +14,9 @@ from telegram.bot.state import (
 
 from api.registration.reg_service import registration_api
 
+from cache.manager import cache_users_manager
+from cache.models import CacheUserModel
+
 from misc.format import format_phone
 
 from loguru import logger
@@ -50,6 +53,13 @@ async def valid_phone_handler(callback: CallbackQuery) -> None:
         username=username,
         phone=phone
     )
+    await cache_users_manager.create_cache_user(
+        user=CacheUserModel(
+            user_id=data['user_id'],
+            username=data['username'],
+            phone=data['phone']
+        )
+    )
     logger.info(f"USER CREATED: {user_info_storage}")
     await callback.message.answer(
             IMessage.SUCCESS_REGISTER_MESSAGE,
@@ -80,6 +90,14 @@ async def input_phone_handler(
         user_id=user_id,
         username=username,
         phone=phone
+    )
+    # await cache_users_manager.delete_cache_user(user_id=user_info['user_id'])
+    await cache_users_manager.create_cache_user(
+        user=CacheUserModel(
+            user_id=user_info['user_id'],
+            username=user_info['username'],
+            phone=user_info['phone']
+        )
     )
     user_info_storage.clear()
     await message.answer(
@@ -119,6 +137,14 @@ async def replace_phone_handler(
     user = await registration_api.replace_phone(
         user_id=user_id,
         phone=phone
+    )
+    await cache_users_manager.delete_cache_user(user_id=data['user_id'])
+    await cache_users_manager.create_cache_user(
+        user=CacheUserModel(
+            user_id=data['user_id'],
+            username=data['username'],
+            phone=data['phone']
+        )
     )
     logger.info(user)
     await message.answer(

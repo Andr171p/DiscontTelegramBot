@@ -1,4 +1,5 @@
 import json
+import time
 from loguru import logger
 from typing import List, Any
 
@@ -29,3 +30,8 @@ def extract_orders_data(response: str) -> List[dict] | list:
         logger.warning("JSON RESPONSE IS NONE...")
         _empty = []
         return _empty
+
+
+def timestamp():
+    _timestamp = time.time()
+    return _timestamp

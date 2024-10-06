@@ -7,7 +7,9 @@ from telegram.bot.keyboards.register_kb import re_register_keyboard
 from telegram.bot.messages import IMessage
 
 from api.status.status_service import status_api
-from api.registration.reg_service import registration_api
+# from api.registration.reg_service import registration_api
+
+from cache.manager import cache_users_manager
 
 
 status_router = Router()
@@ -16,7 +18,9 @@ status_router = Router()
 @status_router.message(F.text == OrderStatusButtons.get_status_button)
 async def order_status_handler(message: Message):
     user_id = message.from_user.id
-    phone = await registration_api.get_phone(user_id=user_id)
+    # phone = await registration_api.get_phone(user_id=user_id)
+    user = await cache_users_manager.get_cache_user(user_id=user_id)
+    phone = user.phone
     orders = await status_api.user_orders(phone=phone)
     if len(orders) != 0:
         for order in orders:

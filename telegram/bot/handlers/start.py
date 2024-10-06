@@ -8,7 +8,7 @@ from telegram.bot.keyboards.order_status_kb import order_status_keyboard
 
 from api.registration.reg_service import registration_api
 
-from rmq.consumer import rmq_consumer
+from cache.manager import cache_users_manager
 
 
 start_router = Router()
@@ -18,7 +18,8 @@ start_router = Router()
 async def start_handler(message: Message) -> None:
     user_id = message.from_user.id
     username = message.from_user.username
-    user_exists = await registration_api.check_user(user_id=user_id)
+    # user_exists = await registration_api.check_user(user_id=user_id)
+    user_exists = await cache_users_manager.check_cache_user(user_id=user_id)
     if user_exists:
         await message.answer(
             IMessage.ALREADY_REGISTER_MESSAGE,
