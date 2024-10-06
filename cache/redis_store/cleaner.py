@@ -1,5 +1,5 @@
-from cache.connection import RedisConnection
-from cache.utils import get_keys
+from cache.redis_store.connection import RedisConnection
+from cache.redis_store.utils import get_keys
 from cache.settings import RedisLogs
 
 from loguru import logger

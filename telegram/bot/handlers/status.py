@@ -19,8 +19,7 @@ status_router = Router()
 async def order_status_handler(message: Message):
     user_id = message.from_user.id
     # phone = await registration_api.get_phone(user_id=user_id)
-    user = await cache_users_manager.get_cache_user(user_id=user_id)
-    phone = user.phone
+    phone = await cache_users_manager.get_cache_phone(user_id=user_id)
     orders = await status_api.user_orders(phone=phone)
     if len(orders) != 0:
         for order in orders:

@@ -1,5 +1,5 @@
-from cache.connection import RedisConnection
-from cache.utils import mapping
+from cache.redis_store.connection import RedisConnection
+from cache.redis_store.utils import mapping
 
 
 class RedisSetUsers(RedisConnection):

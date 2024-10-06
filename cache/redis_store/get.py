@@ -1,7 +1,7 @@
-from cache.connection import RedisConnection
+from cache.redis_store.connection import RedisConnection
 from cache.models import RedisUserModel
 from cache.settings import RedisLogs
-from cache.utils import get_user_data
+from cache.redis_store.utils import get_user_data
 
 from loguru import logger
 

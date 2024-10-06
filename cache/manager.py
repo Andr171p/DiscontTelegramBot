@@ -1,6 +1,6 @@
-from cache.set import RedisSetUsers
-from cache.get import RedisGetUsers
-from cache.cleaner import RedisUsersCleaner
+from cache.redis_store.set import RedisSetUsers
+from cache.redis_store.get import RedisGetUsers
+from cache.redis_store.cleaner import RedisUsersCleaner
 from cache.models import RedisUserModel
 from cache.settings import RedisURL
 
@@ -22,6 +22,13 @@ class CacheUsersManager:
         redis_get_user = RedisGetUsers(url=cls.url)
         user = await redis_get_user.get(user_id=user_id)
         return user
+
+    @classmethod
+    async def get_cache_phone(cls, user_id: int) -> str:
+        redis_get_user = RedisGetUsers(url=cls.url)
+        user = await redis_get_user.get(user_id=user_id)
+        phone = user.phone
+        return phone
 
     @classmethod
     async def check_cache_user(cls, user_id: int) -> bool:
